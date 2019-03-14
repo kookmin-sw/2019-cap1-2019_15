@@ -21,7 +21,7 @@
 
 ### 2. 소개 영상
 
-[![Video Label](http://img.youtube.com/vi/H_gDftcf7Rs/0.jpg)](https://youtu.be/H_gDftcf7Rs?t=0s)
+[![Video Label](http://img.youtube.com/vi/H_gDftcf7Rs/0.jpg)](https://youtu.be/H_gDftcf7Rs?t=0s) Click the label !
 
 ### 3. 팀 소개
 
