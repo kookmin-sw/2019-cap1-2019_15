@@ -21,7 +21,7 @@
 
 ### 2. 소개 영상
 
-프로젝트 소개하는 영상을 추가하세요
+[![Video Label](http://img.youtube.com/vi/H_gDftcf7Rs/0.jpg)](https://youtu.be/H_gDftcf7Rs?t=0s)
 
 ### 3. 팀 소개
 
