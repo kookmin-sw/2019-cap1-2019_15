@@ -37,7 +37,8 @@ Click the label !
 |e-mail|minin1995@naver.com|
 
 ### 3. 팀원 : 최휴영 
-<img src = "https://user-images.githubusercontent.com/36881152/54407247-6fb26a80-4720-11e9-9afe-c47ebd08e4c6.jpg" width = 150, height = 150>
+<img src = "https://user-images.githubusercontent.com/36881152/54408791-aa1f0600-4726-11e9-8c8c-acaae19592b4.jpg)
+" width = 150, height = 150>
 
 |학번|20155104|
 |:---:|:---:|
@@ -45,7 +46,7 @@ Click the label !
 |e-mail|cojf@naver.com|
 
 ### 4. 팀원 : 윤진교 
-![Image](src)
+<img src = "https://user-images.githubusercontent.com/36881152/54408746-6cba7880-4726-11e9-894e-e07dc2b93fdc.jpg" width = 150, height = 150>
 
 |학번|20143083|
 |:---:|:---:|
