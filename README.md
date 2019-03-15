@@ -1,18 +1,6 @@
-# Welcome to GitHub
-
-캡스톤 팀 생성을 축하합니다.
-
-## 팀소개 및 페이지를 꾸며주세요.
-
-- readme.md 수정.
-
-- index.md 예시보고 수정.
-
-- 수정후 팀페이지 확인하여 점검.
-
 **팀페이지 주소** -> https://kookmin-sw.github.io/2019-cap1-2019_15 
 
-### Eye can do it !
+# Eye can do it !
 ***
 
 아이트래킹 기술을 사용하는 (Eye), 손을 쓸 수 없는 장애인도 사용할 수 있는 (Can) 키오스크를 만들고자 팀명을 Eye can do it ! 으로 정하게 되었습니다.
