@@ -12,7 +12,9 @@
 
 **팀페이지 주소** -> https://kookmin-sw.github.io/2019-cap1-2019_15 
 
+### Eye can do it !
 
+아이트래킹 기술을 사용하는 (Eye), 손을 쓸 수 없는 장애인도 사용할 수 있는 (Can) 키오스크를 만들고자 팀명을 Eye can do it ! 으로 정하게 되었습니다.
 
 ### 1. 프로잭트 소개
 
@@ -21,21 +23,29 @@
 
 ### 2. 소개 영상
 
-[![Video Label](http://img.youtube.com/vi/H_gDftcf7Rs/0.jpg)](https://youtu.be/H_gDftcf7Rs?t=0s) Click the label !
+[![Video Label](http://img.youtube.com/vi/H_gDftcf7Rs/0.jpg)](https://youtu.be/H_gDftcf7Rs?t=0s) 
+
+Click the label !
 
 ### 3. 팀 소개
 
-팀을 소개하세요.
+이용훈 
 
-팀원정보 및 담당이나 사진 및 SNS를 이용하여 소개하세요.
+한민인
+
+최휴영 
+
+윤진교 
+
+위리젠 
 
 ### 4. 사용법
 
-소스코드제출시 설치법이나 사용법을 작성하세요.
+Pygaze : http://www.pygaze.org/documentation/
 
 ### 5. 기타
 
-추가적인 내용은 자유롭게 작성하세요.
+
 
 
 ## Markdown을 사용하여 내용꾸미기
