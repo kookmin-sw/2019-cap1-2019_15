@@ -52,7 +52,7 @@ Click the label !
 |e-mail|jinkyo1117@naver.com|
 
 ### 5. 팀원 : 위리젠 
-![Image](src)
+<img src = "https://user-images.githubusercontent.com/36881152/54409240-0b47d900-4729-11e9-9dcf-1e9fef161f42.jpg" width = 150, height = 150>
 
 |학번|20163126|
 |:---:|:---:|
