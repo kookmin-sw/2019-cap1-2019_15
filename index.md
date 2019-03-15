@@ -64,5 +64,5 @@ Pygaze : http://www.pygaze.org/documentation/
 
 
 
-**팀페이지 주소** -> https://kookmin-sw.github.io/2019-cap1-2019_15 
+**팀페이지 주소** -> https://kookmin-sw.github.io/2019-cap1-2019_15/
 
