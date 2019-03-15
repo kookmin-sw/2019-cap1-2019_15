@@ -37,9 +37,9 @@ Click the label !
 |e-mail|minin1995@naver.com|
 
 ### 3. 팀원 : 최휴영 
-![Image](src)
+<img src = "https://user-images.githubusercontent.com/36881152/54407247-6fb26a80-4720-11e9-9afe-c47ebd08e4c6.jpg" width = 150, height = 150>
 
-|학번|20143113|
+|학번|20155104|
 |:---:|:---:|
 |역할|서버 구축|
 |e-mail|minin1995@naver.com|
