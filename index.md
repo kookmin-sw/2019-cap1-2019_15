@@ -18,7 +18,7 @@ Click the label !
 ### 지도교수님 : 주용수 교수님
 
 ### 1. 팀장 : 이용훈 
-![minin](https://user-images.githubusercontent.com/36881152/54407745-61654e00-4722-11e9-8662-5f31fa595d19.jpg)
+![minin](https://user-images.githubusercontent.com/36881152/54407745-61654e00-4722-11e9-8662-5f31fa595d19.jpg){: width="150" height="150"}
 
 |학번|20143091|
 |:---:|:---:|
@@ -26,7 +26,7 @@ Click the label !
 |e-mail|yh0520@kookmin.ac.kr|
 
 ### 2. 팀원 : 한민인
-![minin](https://user-images.githubusercontent.com/36881152/54407239-6aedb680-4720-11e9-9514-3a4bb699e9d8.jpg)
+![minin](https://user-images.githubusercontent.com/36881152/54407239-6aedb680-4720-11e9-9514-3a4bb699e9d8.jpg){: width="150" height="150"}
 
 |학번|20143113|
 |:---:|:---:|
@@ -34,7 +34,7 @@ Click the label !
 |e-mail|minin1995@naver.com|
 
 ### 3. 팀원 : 최휴영 
-![minin](https://user-images.githubusercontent.com/36881152/54408791-aa1f0600-4726-11e9-8c8c-acaae19592b4.jpg)
+![minin](https://user-images.githubusercontent.com/36881152/54408791-aa1f0600-4726-11e9-8c8c-acaae19592b4.jpg){: width="150" height="150"}
 
 |학번|20155104|
 |:---:|:---:|
@@ -42,7 +42,7 @@ Click the label !
 |e-mail|cojf@naver.com|
 
 ### 4. 팀원 : 윤진교 
-![minin](https://user-images.githubusercontent.com/36881152/54408746-6cba7880-4726-11e9-894e-e07dc2b93fdc.jpg)
+![minin](https://user-images.githubusercontent.com/36881152/54408746-6cba7880-4726-11e9-894e-e07dc2b93fdc.jpg){: width="150" height="150"}
 
 |학번|20143083|
 |:---:|:---:|
@@ -50,7 +50,7 @@ Click the label !
 |e-mail|jinkyo1117@naver.com|
 
 ### 5. 팀원 : 위리젠 
-![minin](https://user-images.githubusercontent.com/36881152/54409240-0b47d900-4729-11e9-9dcf-1e9fef161f42.jpg)
+![minin](https://user-images.githubusercontent.com/36881152/54409240-0b47d900-4729-11e9-9dcf-1e9fef161f42.jpg){: width="150" height="150"}
 
 |학번|20163126|
 |:---:|:---:|
