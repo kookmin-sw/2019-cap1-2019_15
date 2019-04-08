@@ -39,9 +39,9 @@ return a;
 function order(){
 	var b = parseInt(document.form.price.value);
 	document.getElementById("total").value = parseInt(document.getElementById("total").value) + b;
-	typeof(b);
-	
-
+	}
+function reset(){
+	document.getElementById("total").value = 1 ;
 }
 
 </script>
@@ -52,12 +52,13 @@ function order(){
       <tr>
       <td>Name &nbsp;<input type='text' id='product' value='' size='9'> &nbsp;
        <td>Amount &nbsp;
-       <td><input type='text' id='count' value='0' size='3'>
+       <td><input type='text' id='count' value='' size='3'>
        <td><p onmouseover='javascript_:change(1);' onmouseout='javascript_:cal();'>▲</p>
        <td><p onmouseover='javascript_:change(-1);' onmouseout='javascript_:cal();'>▼</p>
-       <td> &nbsp;Price &nbsp;<input type='text' id='price' value='' size='9'>
-       <td> &nbsp;Order &nbsp;<input type='button' id='Order' onmouseover='javascript_:order();' size='9'>
+       <td> &nbsp;Price &nbsp;<input type='text' id='price' value='0' size='9'>
+       <td> &nbsp;Order &nbsp;<input type='button' id='Order' onmouseover='javascript_:order();' size='9' value="Look at this!">
        <td> &nbsp;Total &nbsp;<input type='text' id='total' value='0' size='9'>
+       <td> &nbsp;Reset &nbsp;<input type='button' id='Reset' onmouseover='javascript_:reset();' size='9' value='Look at this!'>
       </tr>
      </table>
  <table>
