@@ -113,10 +113,12 @@ while(True):
 
 		image[0:len(right_eye),0:len(right_eye[0])] = right_eye
 		image[0:len(left_eye),0:len(left_eye[0])] = left_eye
-	cv2.imshow("PupilTrack v.0.1", image)
-	if cv2.waitKey(1) & 0xFF == ord('q'):
+	cv2.imshow("Frame", image)
+
+	key = cv2.waitKey(1)
+	if key == 27:
 		break
 
-# show the output image with the face detections + facial landmarks
 
-cv2.waitKey(0)
+cap.release()
+cv2.destroyAllWindows()
