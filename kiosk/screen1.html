@@ -10,7 +10,14 @@ background:purple;
 }
 </style>
 <script>
-  
+var ProductArray = new Array();
+for (k=0;k<8;k++){
+	ProductArray.push(new Array());
+	for(l=0;l<3;l++){
+		ProductArray[k].push(0);
+	}
+}
+
 function ActAmericano()
 { document.getElementById("product").value = 'Americano';}
 function ActCaramel()
@@ -39,9 +46,32 @@ return a;
 function order(){
 	var b = parseInt(document.form.price.value);
 	document.getElementById("total").value = parseInt(document.getElementById("total").value) + b;
+	ProductArray.push([document.getElementById("name").value, document.getElementById("count").value, document.getElementById("price").value]);
 	}
 function reset(){
 	document.getElementById("total").value = 1 ;
+}
+
+function purchase(str){
+	location.href="screen2.html";
+	
+}
+
+function test(){
+	window.open('', 'naver', 'top=100px, left=100px, height=800px, width=800px');
+	
+	
+	
+}
+
+function newWindow() {
+    var newWindow = window.open("", "MsgWindow", "width=200, height=100");
+    for (i=0;i<12;i++){
+    	for (j=0;j<3;j++){
+    		newWindow.document.write(ProductArray[i][j]);	
+    	}
+    	newWindow.document.write("<br>");
+    }
 }
 
 </script>
@@ -59,7 +89,8 @@ function reset(){
        <td> &nbsp;Order &nbsp;<input type='button' id='Order' onmouseover='javascript_:order();' size='9' value="Look at this!">
        <td> &nbsp;Total &nbsp;<input type='text' id='total' value='0' size='9'>
        <td> &nbsp;Reset &nbsp;<input type='button' id='Reset' onmouseover='javascript_:reset();' size='9' value='Look at this!'>
-      </tr>
+      	<td> &nbsp;Purchase &nbsp;<input type='button' id='Purchase' onmouseover='javascript_:purchase();' size='9' value='Look at this!'>
+      <td>Test <input type='button' id='test' onmouseover='javascript_:test();'> </tr>
      </table>
  <table>
  <tr><img src='background.png' height=30 width=30 id="Americano" name="3000" onMouseOver='setTimeout("ActAmericano()",1500);'><br>
@@ -67,6 +98,9 @@ function reset(){
  <img src='background.png' height=30 width=30 id="Choco" name="4000" onMouseOver='setTimeout("ActChoco()",1500);'><br>
  <img src='background.png' height=30 width=30 id="Latte" name="4000" onMouseOver='setTimeout("ActLatte()",1500);'>
  </tr></table>
+ 
+ <br> <a href="#" onclick='javascript_:test();'>네이버 새창열기</a>
+ <br><button type="button" onclick="newWindow()">새창띄우기</button>
 </form>
 </body>
 </html>
