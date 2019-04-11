@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Phase Shift by TEMPLATED</title>
+		<title>Capstone team 15 - Eye can do it</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -16,11 +16,19 @@
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>
+		<script src="js/app.js"></script>
+		<!-- Latest compiled and minified CSS
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		jQuery library
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		Latest compiled JavaScript
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-wide.css" />
 		</noscript>
+
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
 	<body>
@@ -28,11 +36,12 @@
 		<!-- Wrapper -->
 			<div class="wrapper style1">
 
+
 				<!-- Header -->
 					<div id="header" class="skel-panels-fixed">
 						<div id="logo">
-							<h1><a href="index.html">Phase Shift</a></h1>
-							<span class="tag">by TEMPLATED</span>
+							<h1><a href="index.html">Eye can do it</a></h1>
+							<span class="tag">by Kookmin Univercity SW</span>
 						</div>
 						<nav id="nav">
 							<ul>
@@ -47,7 +56,7 @@
 				<!-- Banner -->
 					<div id="banner" class="container">
 						<section>
-							<p>Eye can do it _ capstone team 15</p>
+							<p>Choose drink</p>
 							<a href="index.html" class="button medium">Hot</a>   <a href="index_ice.html" class="button medium">Ice</a>   <a href="index_juice.html" class="button medium">Juice</a>
 						</section>
 					</div>
@@ -56,11 +65,14 @@
 					<div id="extra">
 						<div class="container">
 							<div class="row no-collapse-1">
+
 								<section class="4u"> <a href="#" class="image featured"><img src="images/pic01.jpg" alt=""></a>
 									<div class="box">
-										<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum  wisi maecenas ligula.</p>
-										<a href="#" class="button">장바구니</a> </div>
+										<p id=menu>아메리카노</p>
+										<a onclick="cart(menu)" class="button">장바구니</a> </div>
 								</section>
+
+
 								<section class="4u"> <a href="#" class="image featured"><img src="images/pic02.jpg" alt=""></a>
 									<div class="box">
 										<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum  wisi maecenas ligula.</p>
@@ -136,18 +148,50 @@
 						<h2>주문내역</h2>
 						<span class="byline">주문내역을 확인해주세요 !</span>
 					</header>
-					<form method="post" action="#">
-						<div class="row half">
-							<div class="12u">
-								<textarea name="message" id="message" placeholder="Message"></textarea>
-							</div>
-						</div>
+					<!-- ---------------------------------------- -->
+					<table>
+						<colgroup>
+							<col width = 5%>
+							<col width = 20%>
+							<col width = 10%>
+							<col width = 10%>
+							<col width = 10%>
+							<col width = 10%>
+							<!-- 번호 상품명 가격 수량 총금액 주문관리(삭제)  -->
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">번호</th>
+								<th scope="col">상품명(옵션)</th>
+								<th scope="col">가격</th>
+								<th scope="col">수량</th>
+								<th scope="col">총 금액</th>
+								<th scope="col">주문관리(삭제)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+
+							</tr>
+						</tbody>
+
+
+					</table>
+
+
 						<br/><br/><br/>
+						<!-- ---------------------------------------- -->
 						<div class="row half">
 							<div class="12u">
 								<ul class="actions">
 									<li>
-										<input type="submit" value="주문하기" class="button alt" />
+										<input type="submit" value="주문하기" class="button alt" onclick="complete()"/>
 									</li>
 								</ul>
 							</div>
@@ -161,9 +205,9 @@
 		<div id="copyright">
 			<div class="container">
 				<div class="copyright">
-					<p>Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)</p>
+					<p>Design: <a href="http://templated.co">MININ HAN</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)</p>
 					<ul class="icons">
-						<li><a href="https://github.com/kookmin-sw/2019-cap1-2019_15" class="fa fa-github"><span>Facebook</span></a></li>
+						<li><a href="https://github.com/kookmin-sw/2019-cap1-2019_15" class="fa fa-github"><span>Github</span></a></li>
 						<li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
 						<li><a href="#" class="fa fa-google-plus"><span>Google+</span></a></li>
 					</ul>
