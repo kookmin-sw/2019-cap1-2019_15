@@ -627,3 +627,11 @@
 		text-align: center;
 		border-radius: 0px 0px 6px 6px;
 	}
+/* text-align */
+	.centeringContainer {
+		text-align: center; }
+	.centered {
+		display: table;
+		margin-left: auto;
+		margin-right: auto;
+		display: inline-block; }
