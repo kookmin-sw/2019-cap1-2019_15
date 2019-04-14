@@ -12,6 +12,9 @@ predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat") #사�
 
 cap = cv2.VideoCapture(1) #opencv함수, 1번비디오인 웹캠을 사용한다는 의미
 
+
+
+
 past_values_x = [] #past value를 저장하는 array생성
 def min_intensity_x(img): #x값의 떨림 정도를 파악
 	img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) #이미지를 gray컬러로 변경
@@ -31,7 +34,7 @@ def min_intensity_x(img): #x값의 떨림 정도를 파악
 			min_index_x = x
 
 	past_values_x.append(min_index_x)
-	
+
 	if len(past_values_x) > 3:
 		past_values_x.pop(0)
 
@@ -101,11 +104,19 @@ while(True):
 
 
 		count = 1
+
 		right_eye = imutils.resize(extract_eye(image, shape[36], shape[41], shape[40], shape[39], shape[38], shape[37]), width=100, height=50)
 		left_eye = imutils.resize(extract_eye(image, shape[42], shape[47], shape[46], shape[45], shape[44], shape[43]), width=100, height=50)
 
+		#predictor을 이용하여 왼쪽, 오른쪽 눈 중심의 좌표값 확인(동공의 위치값은 아님)
+		right_center_x = int(((shape[37])[0] + (shape[38])[0] + (shape[41])[0] + (shape[40])[0]) / 4)
+		right_center_y = int(((shape[37])[1] + (shape[38])[1] + (shape[41])[1] + (shape[40])[1]) / 4)
 
+		left_center_x = int(((shape[43])[0] + (shape[44])[0] + (shape[46])[0] + (shape[47])[0]) / 4)
+		left_center_y = int(((shape[43])[1] + (shape[44])[1] + (shape[46])[1] + (shape[47])[1]) / 4)
 
+		print("Right = ", right_center_x , right_center_y)
+		print("Left = ", left_center_x, left_center_y)
 		#눈 테두리에 위치한 36~41번, 42~47번에 점을 찍어서 눈의 위치를 표시해준다
 		for (x, y) in shape:
 
@@ -115,6 +126,7 @@ while(True):
 				cv2.circle(image, (x, y), 1, (255, 0, 0), -1)
 
 			count += 1
+
 
 
 		image[0:len(right_eye),0:len(right_eye[0])] = right_eye
