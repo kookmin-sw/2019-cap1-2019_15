@@ -22,6 +22,74 @@
 			<link rel="stylesheet" href="css/style-wide.css" />
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+<!-- added by coco34521 -->
+<script>
+var ProductArray = new Array();
+for (k=0;k<8;k++){
+	ProductArray.push(new Array());
+	for(l=0;l<3;l++){
+		ProductArray[k].push(0);
+	}
+}
+
+function ActAmericano()
+{ document.getElementById("product").value = 'Americano';
+document.getElementById("count").value = '1';
+document.getElementById("price").value = '2500';}
+function ActCaramel()
+{ document.getElementById("product").value = 'Caramel';
+document.getElementById("count").value = '1';
+document.getElementById("price").value = '3200';}
+function ActChoco()
+{ document.getElementById("product").value = 'Choco';
+document.getElementById("count").value = '1';
+document.getElementById("price").value = '2800';}
+function ActLatte()
+{ document.getElementById("product").value = 'Latte';
+document.getElementById("count").value = '1';
+document.getElementById("price").value = '3000';}
+function ActCappuccino()
+{ document.getElementById("product").value = 'Cappuccino';
+document.getElementById("count").value = '1';
+document.getElementById("price").value = '3500';}
+
+
+function change(num)
+{
+var x  = document.form;
+var y = Number(x.count.value) + num;
+if(y < 1) y = 1;
+x.count.value = y;
+}
+
+function cal(){
+	var a = document.getElementsByName("Americano");
+    var n = document.getElementById( document.getElementById("product").value ).getAttribute('name');
+    var m = document.form.count.value;
+    document.getElementById('price').value=n*m;
+return a;
+}
+function order(){
+	var b = parseInt(document.form.price.value);
+	document.getElementById("total").value = parseInt(document.getElementById("total").value) + b;
+	ProductArray.push([document.getElementById("name").value, document.getElementById("count").value, document.getElementById("price").value]);
+	}
+function reset(){
+	document.getElementById("total").value = 1 ;
+}
+
+
+function newWindow() {
+    var newWindow = window.open("", "MsgWindow", "width=200, height=100");
+    for (i=0;i<12;i++){
+    	for (j=0;j<3;j++){
+    		newWindow.document.write(ProductArray[i][j]);
+    	}
+    	newWindow.document.write("<br>");
+    }
+}
+
+</script>
 	</head>
 	<body>
 
@@ -59,29 +127,29 @@
 								<section class="4u"> <a href="#" class="image featured"><img src="images/pic01.jpg" alt=""></a>
 									<div class="box">
 										<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum  wisi maecenas ligula.</p>
-										<a href="#" class="button">장바구니</a> </div>
+										<p class="button" id="Americano" name="2500" onclick="ActAmericano()">Americano 2500</p></div>
 								</section>
 								<section class="4u"> <a href="#" class="image featured"><img src="images/pic02.jpg" alt=""></a>
 									<div class="box">
 										<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum  wisi maecenas ligula.</p>
-										<a href="#" class="button">장바구니</a> </div>
+										<p class="button" id="Latte" name="3000" onclick="ActLatte()">CaffeLatte 3000</p></div>
 								</section>
 								<section class="4u"> <a href="#" class="image featured"><img src="images/pic03.jpg" alt=""></a>
 									<div class="box">
 										<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum  wisi maecenas ligula.</p>
-										<a href="#" class="button">장바구니</a> </div>
+										<p class="button" id="Cappuccino" name="3500" onclick="ActCappuccino()">Cappuccino 3000</p></div>
 								</section>
 							</div>
 							<div class="row no-collapse-1">
 								<section class="4u"> <a href="#" class="image featured"><img src="images/pic04.jpg" alt=""></a>
 									<div class="box">
 										<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum  wisi maecenas ligula.</p>
-										<a href="#" class="button">장바구니</a> </div>
+										<p class="button" id="Caramel" name="3200" onclick="ActCaramel()">Caramel 3200</p></div>
 								</section>
 								<section class="4u"> <a href="#" class="image featured"><img src="images/pic05.jpg" alt=""></a>
 									<div class="box">
 										<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum  wisi maecenas ligula.</p>
-										<a href="#" class="button">장바구니</a> </div>
+										<p class="button" id="Choco" name="2800" onclick="ActChoco()">Choco 2800</p> </div>
 								</section>
 								<section class="4u"> <a href="#" class="image featured"><img src="images/pic06.jpg" alt=""></a>
 									<div class="box">
@@ -136,6 +204,23 @@
 						<h2>주문내역</h2>
 						<span class="byline">주문내역을 확인해주세요 !</span>
 					</header>
+<form name='form'><table>
+      <tr>
+      <td>Name &nbsp;<input type='text' id='product' value='' size='9'> &nbsp;
+       <td>Amount &nbsp;
+       <td><input type='text' id='count' value='' size='3'>
+       <td><input type='button' style = "font-size:25pt;" onmouseover='javascript_:change(1);' onmouseout='javascript_:cal();' value = '▲'>
+       <td><input type='button' style = "font-size:25pt;" onmouseover='javascript_:change(1);' onmouseout='javascript_:cal();' value = '▼'>
+	</table>
+	<table>
+	<tr>
+       <td> &nbsp;Price &nbsp;<input type='text' id='price' value='0' size='9'>
+       <td> &nbsp;Order &nbsp;<input type='button' id='Order' onclick='javascript_:order();' size='9' value="Look at this!">
+       <td> &nbsp;Total &nbsp;<input type='text' id='total' value='0' size='9'>
+       <td> &nbsp;Reset &nbsp;<input type='button' id='Reset' onclick='javascript_:reset();' size='9' value='Look at this!'>
+      	
+     </table>
+</form>
 					<form method="post" action="#">
 						<div class="row half">
 							<div class="12u">
