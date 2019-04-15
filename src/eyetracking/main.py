@@ -117,6 +117,7 @@ while(True):
 
 		print("Right = ", right_center_x , right_center_y)
 		print("Left = ", left_center_x, left_center_y)
+		
 		#눈 테두리에 위치한 36~41번, 42~47번에 점을 찍어서 눈의 위치를 표시해준다
 		for (x, y) in shape:
 
