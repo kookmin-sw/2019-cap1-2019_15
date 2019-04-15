@@ -25,12 +25,7 @@
 <!-- added by coco34521 -->
 <script>
 var ProductArray = new Array();
-for (k=0;k<8;k++){
-	ProductArray.push(new Array());
-	for(l=0;l<3;l++){
-		ProductArray[k].push(0);
-	}
-}
+
 
 function ActAmericano()
 { document.getElementById("product").value = 'Americano';
@@ -70,24 +65,14 @@ function cal(){
 return a;
 }
 function order(){
-	var b = parseInt(document.form.price.value);
-	document.getElementById("total").value = parseInt(document.getElementById("total").value) + b;
-	ProductArray.push([document.getElementById("name").value, document.getElementById("count").value, document.getElementById("price").value]);
-	}
+	var b = parseInt(document.form.price.value); 
+  document.getElementById("total").value = parseInt(document.getElementById("total").value) + b;  
+  ProductArray.push([document.getElementById("product").value, document.getElementById("count").value, document.getElementById("price").value]); }
 function reset(){
 	document.getElementById("total").value = 1 ;
 }
 
 
-function newWindow() {
-    var newWindow = window.open("", "MsgWindow", "width=200, height=100");
-    for (i=0;i<12;i++){
-    	for (j=0;j<3;j++){
-    		newWindow.document.write(ProductArray[i][j]);
-    	}
-    	newWindow.document.write("<br>");
-    }
-}
 
 </script>
 	</head>
@@ -209,28 +194,38 @@ function newWindow() {
       <td>Name &nbsp;<input type='text' id='product' value='' size='9'> &nbsp;
        <td>Amount &nbsp;
        <td><input type='text' id='count' value='' size='3'>
-       <td><input type='button' style = "font-size:25pt;" onmouseover='javascript_:change(1);' onmouseout='javascript_:cal();' value = '▲'>
-       <td><input type='button' style = "font-size:25pt;" onmouseover='javascript_:change(1);' onmouseout='javascript_:cal();' value = '▼'>
+       <td><input type='button' style = "font-size:25pt;" onclick='javascript_:change(1);' onmouseout='javascript_:cal();' value = '▲'>
+       <td><input type='button' style = "font-size:25pt;" onclick='javascript_:change(1);' onmouseout='javascript_:cal();' value = '▼'>
 	</table>
 	<table>
 	<tr>
        <td> &nbsp;Price &nbsp;<input type='text' id='price' value='0' size='9'>
        <td> &nbsp;Order &nbsp;<input type='button' id='Order' onclick='javascript_:order();' size='9' value="Look at this!">
        <td> &nbsp;Total &nbsp;<input type='text' id='total' value='0' size='9'>
-       <td> &nbsp;Reset &nbsp;<input type='button' id='Reset' onclick='javascript_:reset();' size='9' value='Look at this!'>
+       <td> &nbsp;Reset &nbsp;<input type='button' id='Reset' onclick='javascript_:reset();' size='9' value="Look at this!">
+	<td><input type='button' onclick="information()" value="주문내역확인">
+	
       	
      </table>
 </form>
 					<form method="post" action="#">
 						<div class="row half">
 							<div class="12u">
-								<textarea name="message" id="message" placeholder="Message"></textarea>
+								
+								<textarea name="message" id="message" placeholder="Message" value = ''></textarea>
+								
+<script> 
+function information(){
+document.getElementById("message").value = ProductArray}
+</script>
+
 							</div>
 						</div>
 						<br/><br/><br/>
 						<div class="row half">
 							<div class="12u">
 								<ul class="actions">
+									
 									<li>
 										<input type="submit" value="주문하기" class="button alt" />
 									</li>
