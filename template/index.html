@@ -30,6 +30,17 @@
 		</noscript>
 
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+<!-- add by CHY -->
+<script type="text/javascript">
+function confirmEvent(){
+if (confirm("상품을 추가하시겠습니까?") == true){
+	var offsetstr=$("#order").offset();
+	$('html, body').animate({scrollTop : offsetstr.top}, 1);
+  }
+else{ return;}
+}
+
+</script>
 	</head>
 	<body>
 
@@ -66,14 +77,14 @@
 								<section class="4u"> <a href="#" class="image featured"><img src="images/pic01.jpg" alt=""></a>
 									<div class="box">
 										<p id=menu>Americano<br>3500원</p>
-										<a onclick="cart(document.getElementById("menu").innerHTML)" class="button">장바구니</a> </div>
+										<a onclick="cart(document.getElementById("menu").innerHTML)" class="button" >장바구니</a> </div>
 								</section>
 
 
 								<section class="4u"> <a href="#" class="image featured"><img src="images/pic02.jpg" alt=""></a>
 									<div class="box">
-										<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum  wisi maecenas ligula.</p>
-										<a href="#" class="button">장바구니</a> </div>
+										<p> Cafelatte<br>3200원</p>
+										<a class="button" onclick="confirmEvent()" >장바구니</a> </div>
 								</section>
 								<section class="4u"> <a href="#" class="image featured"><img src="images/pic03.jpg" alt=""></a>
 									<div class="box">
@@ -142,7 +153,7 @@
 			<div class="container">
 				<section>
 					<header class="major">
-						<h2>주문내역</h2>
+						<h2 id="order">주문내역</h2>
 						<span class="byline">주문내역을 확인해주세요 !</span>
 					</header>
 					<!-- ---------------------------------------- -->
@@ -202,7 +213,7 @@
 		<div id="copyright">
 			<div class="container">
 				<div class="copyright">
-					<p>Design: <a href="http://templated.co">MININ HAN</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)</p>
+					<p>contribute: MININ HAN, CHY Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)</p>
 					<ul class="icons">
 						<li><a href="https://github.com/kookmin-sw/2019-cap1-2019_15" class="fa fa-github"><span>Github</span></a></li>
 						<li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
