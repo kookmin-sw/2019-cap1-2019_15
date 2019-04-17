@@ -22,28 +22,33 @@ The Kiosk, which are currently used in many places, is convenient for non-disabl
 ### 담당교수 : 주용수 교수님
 
 ### 팀장 : 이용훈 
-<img src = "https://user-images.githubusercontent.com/36881152/54407745-61654e00-4722-11e9-8662-5f31fa595d19.jpg" width = 250, height = 300>
+<img src = "https://user-images.githubusercontent.com/36881152/54407745-61654e00-4722-11e9-8662-5f31fa595d19.jpg" width = 250, height = 250>
+
 ```markdown
 학번 : 20143091
 역할 : 아이트래킹 시스템 개발
 E-mail : yh0520@kookmin.ac.kr
 ```
+
 ### 팀원 : 한민인
-<img src = "https://user-images.githubusercontent.com/36881152/54407239-6aedb680-4720-11e9-9514-3a4bb699e9d8.jpg" width = 250, height = 300>
+<img src = "https://user-images.githubusercontent.com/36881152/54407239-6aedb680-4720-11e9-9514-3a4bb699e9d8.jpg" width = 250, height = 250>
+
 ```markdown
 학번 : 20143113
 역할 : 웹 기반 키오스크 시스템 개발 및 서버 구축 
 E-mail : minin1995@naver.com
 ```
+
 ### 팀원 : 최휴영 
-<img src = "https://user-images.githubusercontent.com/36881152/54408791-aa1f0600-4726-11e9-8c8c-acaae19592b4.jpg" width = 250, height = 300>
+<img src = "https://user-images.githubusercontent.com/36881152/54408791-aa1f0600-4726-11e9-8c8c-acaae19592b4.jpg" width = 250, height = 250>
 ```markdown
 학번 : 20155104
 역할 : 웹 기반 키오스크 시스템 개발
 E-mail|cojf@naver.com
 ```
+
 ### 팀원 : 윤진교 
-<img src = "https://user-images.githubusercontent.com/36881152/54408746-6cba7880-4726-11e9-894e-e07dc2b93fdc.jpg" width = 250, height = 300>
+<img src = "https://user-images.githubusercontent.com/36881152/54408746-6cba7880-4726-11e9-894e-e07dc2b93fdc.jpg" width = 250, height = 250>
 
 ```markdown
 학번 : 20143083
@@ -51,13 +56,14 @@ E-mail|cojf@naver.com
 E-mail : jinkyo1117@naver.com
 ```
 ### 팀원 : 위리젠 
-<img src = "https://user-images.githubusercontent.com/36881152/54409240-0b47d900-4729-11e9-9dcf-1e9fef161f42.jpg" width = 250, height = 300>
+<img src = "https://user-images.githubusercontent.com/36881152/54409240-0b47d900-4729-11e9-9dcf-1e9fef161f42.jpg" width = 250, height = 250>
 
 ```markdown
 학번 : 20163126
 역할 : 웹 기반 키오스크 시스템 개발 및 UI 디자인
 E-mail : 2324909487@qq.com
 ```
+
 ## 5. 사용법
 
 추후 게시 예정
