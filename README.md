@@ -41,10 +41,11 @@ E-mail : minin1995@naver.com
 
 ### 팀원 : 최휴영 
 <img src = "https://user-images.githubusercontent.com/36881152/54408791-aa1f0600-4726-11e9-8c8c-acaae19592b4.jpg" width = 250, height = 250>
+
 ```markdown
 학번 : 20155104
 역할 : 웹 기반 키오스크 시스템 개발
-E-mail|cojf@naver.com
+E-mail : cojf@naver.com
 ```
 
 ### 팀원 : 윤진교 
