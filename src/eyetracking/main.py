@@ -2,17 +2,17 @@ from imutils import face_utils
 import numpy as np
 import argparse
 import imutils
-#import pyautogui
+import pyautogui
 import dlib
 import cv2
-from pymouse import PyMouse
-m = PyMouse()
+#from pymouse import PyMouse
+#m = PyMouse()
 
 
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 
 
 
@@ -77,7 +77,7 @@ def extract_eye(image, left, bottom_left, bottom_right, right, upper_right, uppe
 	pupil_y = min_intensity_y(eye)
 	print("x: " ,pupil_x)
 	print("y: " ,pupil_y)
-	m.move(800 - (pupil_x-19)*150, 450-(pupil_y-3)*80)
+	pyautogui.moveTo(800 - (pupil_x-19)*150, 450-(pupil_y-3)*80,0.2)
 
 	cv2.circle(eye,(pupil_x, pupil_y), 2, (0,255,0), -1)
 
