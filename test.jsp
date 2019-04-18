@@ -1,4 +1,6 @@
-<!DOCTYPE html> 
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">  
 <html> 
 <head> 
 <meta charset="UTF-8"> 
@@ -41,15 +43,13 @@ function reset(){
 function purchase(str){ 
   location.href="screen2.html"; 
 } 
-function test(){ 
-  window.open('', 'naver', 'top=100px, left=100px, height=800px, width=800px'); 
-} 
+
 function newWindow() { 
   var newWindow = window.open("", "MsgWindow", "width=200, height=100"); 
       for(var i in ProductArray){ 
         
           for (var j in ProductArray[i]){ 
-              newWindow.document.write(ProductArray[i][j]); 
+              newWindow.document.write(ProductArray[i][j]+" "); 
          } 
          newWindow.document.write("<br>"); 
     } 
@@ -63,8 +63,8 @@ function newWindow() {
      <td>Name &nbsp;<input type='text' id='product' value='' size='9'> &nbsp; 
       <td>Amount &nbsp; 
       <td><input type='text' id='count' value='' size='3'> 
-      <td><p onmouseover='change(1);' onmouseout='cal();'>‚ñ≤</p> 
-      <td><p onmouseover='change(-1);' onmouseout='cal();'>‚ñº</p> 
+      <td><p onmouseover='change(1);' onmouseout='cal();'>°„</p> 
+      <td><p onmouseover='change(-1);' onmouseout='cal();'>°Â</p> 
       <td> &nbsp;Price &nbsp;<input type='text' id='price' value='0' size='9'> 
       <td> &nbsp;Order &nbsp;<input type='button' id='Order' onmouseover='order();' size='9' value="Look at this!"> 
       <td> &nbsp;Total &nbsp;<input type='text' id='total' value='0' size='9'> 
@@ -78,8 +78,7 @@ function newWindow() {
  <img src='background.png' height=30 width=30 id="Choco" name="4000" onMouseOver='setTimeout("ActChoco()",1500);'><br> 
  <img src='background.png' height=30 width=30 id="Latte" name="4000" onMouseOver='setTimeout("ActLatte()",1500);'> 
  </tr></table> 
- <br> <a href="#" onclick='test();'>ÎÑ§Ïù¥Î≤Ñ ÏÉàÏ∞ΩÏó¥Í∏∞</a> 
- <br><button type="button" onclick="newWindow()">ÏÉàÏ∞ΩÎùÑÏö∞Í∏∞</button> 
+ <br><button type="button" onclick="newWindow()">ªı√¢∂ÁøÏ±‚</button> 
  </form> 
  </body> 
  </html> 
