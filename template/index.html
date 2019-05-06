@@ -16,7 +16,11 @@
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>
-		<script src="js/app.js"></script>
+		<link rel="stylesheet" href="themes/alertify.core.css" />
+		<link rel="stylesheet" href="themes/alertify.default.css" id="toggleCSS" />
+		<meta name="viewport" content="width=device-width">
+
+		
 		<!-- Latest compiled and minified CSS
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		jQuery library
@@ -30,17 +34,7 @@
 		</noscript>
 
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
-<!-- add by CHY -->
-<script type="text/javascript">
-function confirmEvent(){
-if (confirm("상품을 추가하시겠습니까?") == true){
-	var offsetstr=$("#order").offset();
-	$('html, body').animate({scrollTop : offsetstr.top}, 1);
-  }
-else{ return;}
-}
 
-</script>
 	</head>
 	<body>
 
@@ -65,7 +59,7 @@ else{ return;}
 					<div id="banner" class="container">
 						<section>
 							<p>Choose drink</p>
-							<a href="index.html" class="button medium">Hot</a>   <a href="index_ice.html" class="button medium">Ice</a>   <a href="index_juice.html" class="button medium">Juice</a>
+							<a href="index.html" class="button medium">Iced</a>   <a href="index_ice.html" class="button medium">Hot</a>   <a href="index_juice.html" class="button medium">beverage</a>
 						</section>
 					</div>
 
@@ -74,40 +68,53 @@ else{ return;}
 						<div class="container">
 							<div class="row no-collapse-1">
 
-								<section class="4u"> <a href="#" class="image featured"><img src="images/pic01.jpg" alt=""></a>
-									<div class="box">
-										<p id=menu>Americano<br>3500원</p>
-										<a onclick="cart(document.getElementById("menu").innerHTML)" class="button" >장바구니</a> </div>
+								<section class="4u" > <a name="menu" class="image featured" id="Americano"><img src="images/americano(Ice).PNG" alt=""></a>
+									<div class="box" name="menu" id="Americano">
+										<p>Americano<br>3500원</p>
+										<a class="button">장바구니</a>
+									</div>
 								</section>
-
-
-								<section class="4u"> <a href="#" class="image featured"><img src="images/pic02.jpg" alt=""></a>
-									<div class="box">
-										<p> Cafelatte<br>3200원</p>
-										<a class="button" onclick="confirmEvent()" >장바구니</a> </div>
+								<!-- 아메리카노 -->
+								<section class="4u" > <a name="menu" class="image featured" id="Cappuccino"><img src="images/cappuccino(Ice).PNG" alt=""></a>
+									<div class="box" name="menu" id="Cappuccino">
+										<p>Cappuccino<br>3700원</p>
+										<a class="button">장바구니</a>
+									</div>
 								</section>
-								<section class="4u"> <a href="#" class="image featured"><img src="images/pic03.jpg" alt=""></a>
-									<div class="box">
-										<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum  wisi maecenas ligula.</p>
-										<a href="#" class="button">장바구니</a> </div>
+								<!--카푸치노 -->
+								<section class="4u"> <a name="menu" class="image featured" id="CaffeLatte"><img src="images/cafeLatte(Ice).PNG" alt=""></a>
+									<div class="box" name="menu" id="CaffeLatte">
+										<p>CaffeLatte<br>3600원</p>
+										<a class="button">장바구니</a>
+									</div>
 								</section>
+								<!--카페라때-->
 							</div>
+
 							<div class="row no-collapse-1">
-								<section class="4u"> <a href="#" class="image featured"><img src="images/pic04.jpg" alt=""></a>
-									<div class="box">
-										<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum  wisi maecenas ligula.</p>
-										<a href="#" class="button">장바구니</a> </div>
+								<section class="4u"> <a name="menu" class="image featured" id="VanilaLatte"><img src="images/vanilaLatte(Ice).PNG" alt=""></a>
+									<div class="box" name="menu" id="VanilaLatte">
+										<p>VanilaLatte<br>3500원</p>
+										<a class="button">장바구니</a>
+									</div>
 								</section>
-								<section class="4u"> <a href="#" class="image featured"><img src="images/pic05.jpg" alt=""></a>
-									<div class="box">
-										<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum  wisi maecenas ligula.</p>
-										<a href="#" class="button">장바구니</a> </div>
+								<!--바닐라라떼 -->
+								<section class="4u"> <a name="menu" class="image featured" id="Caramel"><img src="images/caramel(Ice).PNG" alt=""></a>
+									<div class="box" name="menu" id="Caramel">
+										<p>Caramel<br>3500원</p>
+										<a class="button">장바구니</a>
+									</div>
 								</section>
-								<section class="4u"> <a href="#" class="image featured"><img src="images/pic06.jpg" alt=""></a>
-									<div class="box">
-										<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum  wisi maecenas ligula.</p>
-										<a href="#" class="button">장바구니</a> </div>
+								<!--카라멜마끼야토 -->
+								<section class="4u"> <a name="menu" class="image featured" id="Cafemocha"><img src="images/cafemocha(Ice).PNG" alt=""></a>
+									<div class="box" name="menu" id="Cafemocha">
+										<p>Cafemocha<br>3500원</p>
+										<a class="button">장바구니</a>
+									</div>
 								</section>
+								<!--카페모카-->
+<script src="js/app.js"></script>
+
 							</div>
 						</div>
 					</div>
@@ -153,7 +160,7 @@ else{ return;}
 			<div class="container">
 				<section>
 					<header class="major">
-						<h2 id="order">주문내역</h2>
+						<h2>주문내역</h2>
 						<span class="byline">주문내역을 확인해주세요 !</span>
 					</header>
 					<!-- ---------------------------------------- -->
@@ -213,7 +220,7 @@ else{ return;}
 		<div id="copyright">
 			<div class="container">
 				<div class="copyright">
-					<p>contribute: MININ HAN, CHY Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)</p>
+					<p>Contribute: <a href="http://templated.co">MININ HAN, CHY</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)</p>
 					<ul class="icons">
 						<li><a href="https://github.com/kookmin-sw/2019-cap1-2019_15" class="fa fa-github"><span>Github</span></a></li>
 						<li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
@@ -222,6 +229,37 @@ else{ return;}
 				</div>
 			</div>
 		</div>
+<script src="lib/alertify.min.js"></script>
+	<script>
+		function reset () {
+			$("#toggleCSS").attr("href", "themes/alertify.default.css");
+			alertify.set({
+				labels : {
+					ok     : "OK",
+					cancel : "Cancel"
+				},
+				delay : 5000,
+				buttonReverse : false,
+				buttonFocus   : "ok"
+			});
+		}
+
+
+		$("[name=menu]").on( 'click', function () {
+			reset();
+			var value=$(this).attr("id");
+			alertify.confirm( value + "을(를) 추가할까요?", function (e) {
+				if (e) {
+					alertify.success("추가하였습니다.");
+				} else {
+					alertify.error("취소하였습니다.");
+				}
+			});
+			return false;
+		});
+
+
+	</script>
 
 	</body>
 </html>
