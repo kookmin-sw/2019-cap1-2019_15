@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>Capstone team 15 - Eye can do it</title>
+
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.dropotron.min.js"></script>
+	<script src="js/skel.min.js"></script>
+	<script src="js/skel-layers.min.js"></script>
+	<script src="js/init.js"></script>
+	<script src="js/app.js"></script>
+	<noscript>
+		<link rel="stylesheet" href="css/skel.css" />
+		<link rel="stylesheet" href="css/style_bootstrap.css" />
+		<link rel="stylesheet" href="css/style-wide.css" />
+	</noscript>
+	<style>
+		body {
+			padding-top: 60px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<!-- 상단메뉴의 이름 -->
+			<a class="navbar-brand" href="#"> Bootstrap</a>
+			<!-- 상단 메뉴가 좁아지면서 햄버거 버튼됨 -->
+			<div class="navbar-header">
+				<button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#target">
+					<span class="sr-only">Toggle Navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<!--펼쳐진 상단 메뉴 -->
+			<div class="collapse navbar-collapse" id="target">
+				<ul class="nav navbar-nav">
+					<!-- 상단메뉴의 드롭다운메뉴 -->
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<span>HTML5</span>
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Basic Concept</a></li>
+							<li><a href="#">Drag and Drop</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Motion</a></li>
+						</ul>
+					</li>
+					<!-- 상단메뉴의 드롭다운메뉴의 끝 -->
+					<li><a href="#">CSS3</a></li>
+					<li><a href="#">JavaScript</a></li>
+					<li><a href="#">Node</a></li>
+					<li><a href="#">API</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Node</a></li>
+					<li><a href="#">API</a></li>
+				</ul>
+				<!-- 폼태그를 이용한 서칭창 -->
+				<form class="navbar-form navbar-right">
+					<input type="text" class="form-control" placeholder="Search" />
+				</form>
+				<!-- 폼태그를 이용한 서칭창 끝-->
+			</div>
+			<!--펼쳐진 상단 메뉴끝 -->
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-2">
+				<!-- 사이드 바 메뉴-->
+				<div class="container">
+				  <ul class="nav nav-pills nav-stacked" role="tablist">
+						<br/><br/><br/><br/><br/>
+				    <li class="active"><a href="#"><i class="glyphicon glyphicon-leaf"></i>Menu</a></li>
+				    <li><a href="#">HTML</a></li>
+				    <li><a href="#">CSS</a></li>
+				    <li><a href="#">About</a></li>
+				  </ul>
+				</div>
+			</div>
+			<!-- 9단길이의 첫번째 열 -->
+			<div class="col-md-7">
+				<div class="jumbotron">
+					<h3>choose drink</h3>
+					<div class="container">
+					  <table class="table table-bordered">
+					    <tbody>
+					      <tr>
+					        <td>1</td>
+					        <td>Anna</td>
+									<td>Anna</td>
+					      </tr>
+					      <tr>
+					        <td>
+										<div class="box">
+											<p id=menu data-product-id="menu">Americano<br>3500원</p>
+											<a onclick="cart()" class="button">장바구니</a>
+										</div>
+									</td>
+					        <td><a class="btn btn-primary btn-large" href="#" role="button">주문하기</a></td>
+									<td><a class="btn btn-primary btn-large" href="#" role="button">주문하기</a></td>
+					      </tr>
+					      <tr>
+					        <td>3</td>
+					        <td>John</td>
+									<td>Anna</td>
+					      </tr>
+								<tr>
+					        <td><a class="btn btn-primary btn-large" href="#" role="button">주문하기</a></td>
+					        <td><a class="btn btn-primary btn-large" href="#" role="button">주문하기</a></td>
+									<td><a class="btn btn-primary btn-large" href="#" role="button">주문하기</a></td>
+					      </tr>
+					    </tbody>
+					  </table>
+					</div>
+
+					<!-- <div class="container">
+						<div class="row">
+							<div class="col-sm-4">
+								<section class="4u"> <a href="#" class="image featured"><img src="images/cappuccino(Ice).PNG" alt=""></a>
+									<div class="box">
+										<p id=menu data-product-id="menu">Cappuccino<br>3700원</p>
+										<a onclick="cart()" class="button">장바구니</a>
+									</div>
+								</section>
+							</div>
+							<div class="col-sm-4">
+								<p>
+									hi
+								</p>
+							</div>
+							<div class="col-sm-4">
+								<p>
+									hi
+								</p>
+							</div>
+						</div>
+						<div class="row">
+
+						</div>
+					</div> -->
+				</div>
+			</div>
+			<div class="col-md-3">
+				<a class="btn btn-primary btn-large" href="#" role="button">주문하기</a>
+			</div>
+		</div>
+	</div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
