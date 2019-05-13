@@ -1,5 +1,4 @@
 from imutils import face_utils
-from scipy.spatial import distance as dist
 import numpy as np
 import argparse
 import imutils
@@ -8,33 +7,10 @@ import dlib
 import cv2
 
 
-def eye_distance(eye):
-
-	A = dist.euclidean(eye[1], eye[5])
-	B = dist.euclidean(eye[2], eye[4])
-
-
-	C = dist.euclidean(eye[0], eye[3])
-
-	eye_dist = (A + B) / (2.0 * C)
-
-	return eye_dist
-
-
-EYE_AR_THRESH = 0.3
-EYE_AR_CONSEC_FRAMES = 6
-COUNTER = 0
-TOTAL = 0
-
-
 detector = dlib.get_frontal_face_detector() #dlib에서 해당 함수를 사용
 predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat") #사람의 얼굴에 68개의 점을 찍어 놓은 데이터를 저장하고 있는 face68을 사용한다
 
-(lStart, lEnd) = face_utils.FACIAL_LANDMARKS_IDXS["left_eye"]
-(rStart, rEnd) = face_utils.FACIAL_LANDMARKS_IDXS["right_eye"]
-
-
-cap = cv2.VideoCapture(1) #opencv함수, 1번비디오인 웹캠을 사용한다는 의미
+cap = cv2.VideoCapture(0) #opencv함수, 1번비디오인 웹캠을 사용한다는 의미
 
 def extract_eye(image, left, bottom_left, bottom_right, right, upper_right, upper_left):
 	lower_bound = max([left[1], right[1], bottom_left[1], bottom_right[1], upper_left[1], upper_right[1]])
@@ -68,39 +44,11 @@ while(True):
 		right_eye = imutils.resize(extract_eye(image, shape[36], shape[41], shape[46], shape[45], shape[44], shape[37]), width=360, height=240)
 		#left_eye = imutils.resize(extract_eye(image, shape[42], shape[47], shape[46], shape[45], shape[44], shape[43]), width=100, height=50)
 
-		leftEye = shape[lStart:lEnd]
-		rightEye = shape[rStart:rEnd]
-		leftEAR = eye_distance(leftEye)
-		rightEAR = eye_distance(rightEye)
-
-
-		ear = (leftEAR + rightEAR) / 2.0
-
-
-		if ear < EYE_AR_THRESH:
-			COUNTER += 1
-
-
-		else:
-
-			if COUNTER >= EYE_AR_CONSEC_FRAMES:
-				TOTAL += 1
-
-
-			COUNTER = 0
-
-
-		cv2.putText(right_eye, "Blinks: {}".format(TOTAL), (10, 30),
-			cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
-		cv2.putText(right_eye, "EAR: {:.2f}".format(ear), (200, 30),
-			cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
-
-
 		rows, cols, _ = right_eye.shape
 		gray_right_eye = cv2.cvtColor(right_eye, cv2.COLOR_BGR2GRAY)
 		gray_right_eye = cv2.GaussianBlur(gray_right_eye, (7, 7), 0)
 
-		_, threshold = cv2.threshold(gray_right_eye, 15, 255, cv2.THRESH_BINARY_INV)
+		_, threshold = cv2.threshold(gray_right_eye, 40, 255, cv2.THRESH_BINARY_INV)
 		contours, _ = cv2.findContours(threshold, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 		contours = sorted(contours, key=lambda x: cv2.contourArea(x), reverse=True)
 
@@ -134,6 +82,7 @@ while(True):
 		image[0:len(right_eye),0:len(right_eye[0])] = right_eye
 		#image[0:len(left_eye),0:len(left_eye[0])] = left_eye
 
+	cv2.imshow("eye", right_eye)
 
 
 	key = cv2.waitKey(1)
