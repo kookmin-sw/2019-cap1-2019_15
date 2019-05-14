@@ -26,7 +26,7 @@ def direction(r_eye_point, anchor_point, w, h, multiple=1):
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 
 def extract_eye(image, left, bottom_left, bottom_right, right, upper_right, upper_left):
 	lower_bound = max([left[1], right[1], bottom_left[1], bottom_right[1], upper_left[1], upper_right[1]])
@@ -38,6 +38,8 @@ def extract_eye(image, left, bottom_left, bottom_right, right, upper_right, uppe
 
 
 	return eye
+
+ANCHOR = 0
 
 while(True):
 
@@ -54,18 +56,22 @@ while(True):
 		r_eye = shape[nStart:nEnd]
 		r_eye_point = (r_eye[3, 0], r_eye[3, 1])
 
-		ANCHOR_POINT = r_eye_point
+		while ANCHOR < 30:
+			ANCHOR += 1
+			ANCHOR_POINT = r_eye_point
+
+
 
 
 
 		x, y = ANCHOR_POINT
 		nx, ny = r_eye_point
-		w, h = 60, 20
+		w, h = 60, 10
 		multiple = 1
 		cv2.line(image, ANCHOR_POINT, r_eye_point, (0,0,255), 2)
 
 		dir = direction(r_eye_point, ANCHOR_POINT, w, h)
-		cv2.putText(image, dir.upper(), (10, 90), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255,0,0), 2)
+		#cv2.putText(image, dir.upper(), (10, 90), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255,0,0), 2)
 		drag = 18
 		if dir == 'up':
 			pag.moveRel(0, -drag)
