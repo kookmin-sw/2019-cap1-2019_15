@@ -10,23 +10,31 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
+
+<!--부트스트랩 시작-->
+		<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Bootstrap파일 위치 설정 -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<!--부트스트랩 끝-->
+
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.dropotron.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>
-		<link rel="stylesheet" href="themes/alertify.core.css" />
-		<link rel="stylesheet" href="themes/alertify.default.css" id="toggleCSS" />
-		<meta name="viewport" content="width=device-width">
-
-		
-		<!-- Latest compiled and minified CSS
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		jQuery library
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		Latest compiled JavaScript
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+		<script src="js/app.js"></script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
@@ -34,15 +42,17 @@
 		</noscript>
 
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
-		<script>
-function newwin(){
-	var win = window.open("popup.html","","width=850,height=800,toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no");
-
+<!-- add by CHY -->
+<script type="text/javascript">
+function confirmEvent(){
+if (confirm("상품을 추가하시겠습니까?") == true){
+	var offsetstr=$("#order").offset();
+	$('html, body').animate({scrollTop : offsetstr.top}, 1);
+  }
+else{ return;}
 }
 
-
 </script>
-
 	</head>
 	<body>
 
@@ -63,62 +73,92 @@ function newwin(){
 						</nav>
 					</div>
 
-				<!-- Banner -->
-					<div id="banner" class="container">
-						<section>
-							<p>Choose drink</p>
-							<a href="index.html" class="button medium">Hot</a>   <a href="index_ice.html" class="button medium">ICE</a>   <a href="index_juice.html" class="button medium">beverage</a>
-						</section>
-					</div>
-
 				<!-- Extra -->
+
 					<div id="extra">
-						<div style ='display:inline;min-width:12000px;' class="container">
-							
-							<div class="row no-collapse-1">
-
-								<section style = 'display:inline;align-items:center;float:right;width:250px' class="4u" > <a onclick="newwin()" class="image featured" id="(Hot) Americano"><img src="images/americano(Hot).PNG" alt=""></a>
-									<div class="box" id="(Hot) Americano">
-										<p>Americano<br>3500원</p>
-										<a class="button">장바구니</a>
+						<div class="container-fluid">
+							<div class="row">
+								<!-- 2(종류)단길이의 첫번째 열 -->
+								<!-- Banner -->
+								<div class="col-md-2">
+									<div id="banner" class="container">
+										<a href="index.html" class="button medium">I<br/>c<br/>e<br/>d</a><br/><br/>
+										<a href="index_ice.html" class="button medium">H<br/>o<br/>t</a><br/><br/>
+										<a href="index_juice.html" class="button medium">J<br/>u<br/>i<br/>c<br/>e</a>
 									</div>
-								</section>
-								<!-- 아메리카노 -->
-								<section style = 'display:inline;align-items:center;float:right;width:250px' class="4u" > <a name="menu" class="image featured" id="(Hot) Cappuccino"><img src="images/cappuccino(Hot).PNG" alt=""></a>
-									<div class="box" name="menu" id="(Hot) Cappuccino">
-										<p>Cappuccino<br>3700원</p>
-										<a class="button">장바구니</a>
-									</div>
-								</section>
-								<!--카푸치노 -->
-								
 								</div>
-
-							<div class="row no-collapse-1">
-								<section style = 'display:inline;align-items:center;float:right;width:250px' class="4u"> <a name="menu" class="image featured" id="(Hot) CaffeLatte"><img src="images/cafeLatte(Hot).PNG" alt=""></a>
-									<div class="box" name="menu" id="(Hot) CaffeLatte">
-										<p>CaffeLatte<br>3600원</p>
-										<a class="button">장바구니</a>
+								<!-- 7(메뉴)단길이의 첫번째 열 -->
+								<div class="col-md-7">
+									<div class="jumbotron">
+										<div class="container">
+										  <table class="table">
+										    <tbody>
+										      <tr><!--line1-->
+										        <td>
+															<div class="box"><a href="#" class="image featured"><img src="images/americano(Ice).PNG" alt=""></a>
+																<p id=menu data-product-id="menu">Americano<br>3500원</p>
+																<a onclick="cart()" class="button">장바구니</a>
+															</div>
+														</td>
+														<td>
+															<div class="box"><a href="#" class="image featured"><img src="images/cappuccino(Ice).PNG" alt=""></a>
+																<p id=menu data-product-id="menu">Cappuccino<br>3700원</p>
+																<a onclick="cart()" class="button">장바구니</a>
+															</div>
+														</td>
+														<td>
+															<div class="box"> <a href="#" class="image featured"><img src="images/cafeLatte(Ice).PNG" alt=""></a>
+																<p id=menu data-product-id="menu">CafeLatte<br>3600원</p>
+																<a onclick="cart()" class="button">장바구니</a>
+															</div>
+														</td>
+										      </tr>
+													<tr><!--line2-->
+														<td>
+															<div class="box"> <a href="#" class="image featured"><img src="images/vanilaLatte(Ice).PNG" alt=""></a>
+																<p id=menu data-product-id="menu">Vanila latte<br>3500원</p>
+																<a onclick="cart()" class="button">장바구니</a>
+															</div>
+														</td>
+														<td>
+															<div class="box"> <a href="#" class="image featured"><img src="images/caramel(Ice).PNG" alt=""></a>
+																<p id=menu data-product-id="menu">caramel<br>3500원</p>
+																<a onclick="cart()" class="button">장바구니</a>
+															</div>
+														</td>
+														<td>
+															<div class="box"> <a href="#" class="image featured"><img src="images/cafemocha(Ice).PNG" alt=""></a>
+																<p id=menu data-product-id="menu">Cafe mocha<br>3500원</p>
+																<a onclick="cart()" class="button">장바구니</a>
+															</div>
+														</td>
+													</tr>
+										    </tbody>
+										  </table>
+										</div>
 									</div>
-								</section>
-								<!--카페라때-->
-							
-
-							
-								<section style = 'display:inline;align-items:center;float:right;width:250px' class="4u"> <a name="menu" class="image featured" id="(Hot) VanilaLatte"><img src="images/vanilaLatte(Hot).PNG" alt=""></a>
-									<div class="box" name="menu" id="(Hot) VanilaLatte">
-										<p>VanilaLatte<br>3500원</p>
-										<a class="button">장바구니</a>
-									</div>
-								</section>
-								<!--바닐라라떼 -->
-								
-
+								</div>
+								<!--장바구니-->
+								<div class="col-md-3">
+									<a class="btn btn-primary btn-large" href="#" role="button">주문하기</a>
+								</div>
 							</div>
 						</div>
-					</div>
 
-				
+
+						<div class="container small">
+							<div class="row no-md-2">
+								<section class="4u"> <a href="#" class="image featured"><img src="images/americano(Ice).PNG" alt=""></a>
+									<div class="box">
+										<p id=menu data-product-id="menu">Americano<br>3500원</p>
+										<a onclick="cart()" class="button">장바구니</a>
+									</div>
+								</section>
+							</div>
+						</div>
+
+
+					</div>
 		<br><br>
 	</div>
 
@@ -187,7 +227,7 @@ function newwin(){
 		<div id="copyright">
 			<div class="container">
 				<div class="copyright">
-					<p>Contribute: <a href="http://templated.co">MININ HAN, CHY</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)</p>
+					<p>Design: <a href="http://templated.co">MININ HAN</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)</p>
 					<ul class="icons">
 						<li><a href="https://github.com/kookmin-sw/2019-cap1-2019_15" class="fa fa-github"><span>Github</span></a></li>
 						<li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
@@ -196,37 +236,6 @@ function newwin(){
 				</div>
 			</div>
 		</div>
-<script src="lib/alertify.min.js"></script>
-	<script>
-		function reset () {
-			$("#toggleCSS").attr("href", "themes/alertify.default.css");
-			alertify.set({
-				labels : {
-					ok     : "OK",
-					cancel : "Cancel"
-				},
-				delay : 5000,
-				buttonReverse : false,
-				buttonFocus   : "ok"
-			});
-		}
-
-
-		$("[name=menu]").on( 'click', function () {
-			reset();
-			var value=$(this).attr("id");
-			alertify.confirm( value + "을(를) 추가할까요?", function (e) {
-				if (e) {
-					alertify.success("추가하였습니다.");
-				} else {
-					alertify.error("취소하였습니다.");
-				}
-			});
-			return false;
-		});
-
-
-	</script>
 
 	</body>
 </html>
