@@ -59,7 +59,7 @@ else{ return;}
 
 		function test(name) {
 			myWindow = window.open(
-				"popup.html", '_blank', "toolbar=yes,scrollbars=no,resizable=no,top=<80></80>,left=500,width=600,height=600"
+				"popup.html", '_blank', "toolbar=yes,scrollbars=no,resizable=no,top=80,left=500,width=600,height=600"
 			);
 			myWindow.onload = function() {
 				myWindow.drink.innerText = name;
@@ -108,23 +108,26 @@ else{ return;}
 								<table class="table">
 									<tbody id="menu_list">
 										<tr>
+											<p>
+												이미지를 클릭하여 주문도 가능합니다
+											</p>
 											<!--line1-->
 											<td>
-												<div class="box"><a href="#" class="image featured"><img src="images/americano(Ice).PNG" alt=""></a>
+												<div class="box"><a href="#" class="image featured"><img src="images/americano(Ice).PNG" alt="americano" class=""></a>
 													<p data-product-id="menu">Americano<br>3500원</p>
-													<button onclick="cart()" class="button">장바구니</a>
+													<button onclick="cart()" class="button fit medium">장바구니</a>
 												</div>
 											</td>
 											<td>
 												<div class="box"><a href="#" class="image featured"><img src="images/cappuccino(Ice).PNG" alt=""></a>
 													<p id=menu data-product-id="menu">Cappuccino<br>3700원</p>
-													<a onclick="cart()" class="button">장바구니</a>
+													<a onclick="cart()" class="button medium">장바구니</a>
 												</div>
 											</td>
 											<td>
 												<div class="box"> <a href="#" class="image featured"><img src="images/cafeLatte(Ice).PNG" alt=""></a>
 													<p id=menu data-product-id="menu">CafeLatte<br>3600원</p>
-													<a onclick="cart()" class="button">장바구니</a>
+													<a onclick="cart()" class="button fit">장바구니</a>
 												</div>
 											</td>
 										</tr>
