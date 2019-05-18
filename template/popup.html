@@ -43,57 +43,73 @@
 
 	<!-- Wrapper -->
 	<div class="wrapper style1">
-		
-		<div id="banner" class="container">
-			<p id="drink"></p>
+		<div id="extra">
+			<div class="container">
+				<form name='form'>
+					<div class="container">
+						<h1>Size</h1>&nbsp;
+						<table class="table">
+							<tbody>
+								<tr>
+									<td>
+										<input id="test" type='button' name="size" class="button" value='S'>
+									</td>
+									<td>
+										<input type='button' name="size" class="button" value='M'>
+									</td>
+									<td>
+										<input type='button' name="size" class="button" value='L'>
+									</td>
+								</tr>
+							</tbody>
+						</table>
 
-			<form name='form'>
-				<div class="container">
-					<p>Size&nbsp;
-						<input id="test" type='button' class="button small" name="size" value='S'>&nbsp;<input type='button' name="size" class="button small" value='M'>&nbsp;
-						<input type='button' class="button small" name="size" value='L'>
-					</p>
-					<p>Add shot&nbsp;
-						<input type='button' class="button small" name="shot" value='Y'>
-						<input type='button' class="button small" name="shot" value='N'>
-					</p>
-					<p>Amount
-						<input type='button' class="button small" name="▲" value='▲'>
-						<input type='button' class="button small" name="▼" value='▼'>&nbsp;<input id=count style="font-size:35px;" value='1' size='1'>
-					</p>
-					<input type='button' name=menu value='Confirm' onclick="confirmChk();">
-				</div>
-			</form>
 
-			<script>
-				var size, shot, amount;
-				document.querySelector("form").addEventListener("click", (e) => {
-					var name = e.target.getAttribute("name");
-					if (e.target.nodeName == "INPUT") {
-						if (name == "size") {
-							size = e.target.value;
-						} else if (name == "shot") {
-							shot = e.target.value;
-						} else if (name == "▲") {
-							count.value++;
-						} else if (name == "▼" && count.value > 0) {
-							count.value--;
+						<p>Add shot&nbsp;
+							<input type='button' class="button small" name="shot" value='Y'>
+							<input type='button' class="button small" name="shot" value='N'>
+						</p>
+						<p>Amount
+							<input type='button' class="button small" name="▲" value='▲'>
+							<input type='button' class="button small" name="▼" value='▼'>&nbsp;<input id=count style="font-size:35px;" value='1' size='1'>
+						</p>
+						<input type='button' name=menu value='Confirm' onclick="confirmChk();">
+					</div>
+				</form>
+
+				<script>
+					var size, shot, amount;
+					document.querySelector("form").addEventListener("click", (e) => {
+						var name = e.target.getAttribute("name");
+						if (e.target.nodeName == "INPUT") {
+							if (name == "size") {
+								size = e.target.value;
+							} else if (name == "shot") {
+								shot = e.target.value;
+							} else if (name == "▲") {
+								count.value++;
+							} else if (name == "▼" && count.value > 0) {
+								count.value--;
+							}
+						}
+					});
+
+					function confirmChk() {
+						if (size && shot) {
+							amount = count.value;
 						}
 					}
-				});
 
-				function confirmChk() {
-					if (size && shot) {
-						amount = count.value;
+					function senditem() {
+						setTimeout(function() {
+							window.close();
+						}, 2000);
 					}
-				}
+				</script>
+			</div>
 
-				function senditem() {
-					setTimeout(function() {
-						window.close();
-					}, 2000);
-				}
-			</script>
+
+
 		</div>
 	</div>
 
