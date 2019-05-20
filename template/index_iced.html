@@ -55,6 +55,7 @@ else{ return;}
 
 </script> -->
 	<script>
+		
 		var myWindow;
 
 		function test(name) {
@@ -112,42 +113,42 @@ else{ return;}
 											</p>
 											<!--line1-->
 											<td>
-												<div class="box"><a class="image featured"><img src="images/americano(Ice).PNG" name="(ICED) Americano"></a>
-													<p>Americano<br>3500원</p>
-													<button class="button fit" name="(ICED) Americano">장바구니</a>
+												<div data-name="(ICED) Americano" class="box"><a class="image featured"><img src="images/americano(Ice).PNG" data-name="(ICED) Americano"></a>
+													<p data-name="(ICED) Americano">Americano<br>3500원</p>
+													<button class="button fit" data-name="(ICED) Americano">장바구니</button>
 												</div>
 											</td>
 											<td>
-												<div class="box"><a class="image featured"><img src="images/cappuccino(Ice).PNG" name="(ICED) Cappuccino"></a>
-													<p>Cappuccino<br>3700원</p>
-													<button class="button fit" name="(ICED) Cappuccino">장바구니</a>
+												<div data-name="(ICED) Cappuccino" class="box"><a class="image featured"><img src="images/cappuccino(Ice).PNG" data-name="(ICED) Cappuccino"></a>
+													<p data-name="(ICED) Cappuccino">Cappuccino<br>3700원</p>
+													<button class="button fit" data-name="(ICED) Cappuccino">장바구니</a>
 												</div>
 											</td>
 											<td>
-												<div class="box"> <a class="image featured"><img src="images/cafeLatte(Ice).PNG" name="(ICED) CafeLatte"></a>
-													<p>CafeLatte<br>3600원</p>
-													<button class="button fit" name="(ICED) CafeLatte">장바구니</a>
+												<div data-name="(ICED) CafeLatte" class="box"> <a class="image featured"><img src="images/cafeLatte(Ice).PNG" data-name="(ICED) CafeLatte"></a>
+													<p data-name="(ICED) CafeLatte">CafeLatte<br>3600원</p>
+													<button class="button fit" data-name="(ICED) CafeLatte">장바구니</a>
 												</div>
 											</td>
 										</tr>
 										<tr>
 											<!--line2-->
 											<td>
-												<div class="box"> <a class="image featured"><img src="images/vanilaLatte(Ice).PNG" name="(ICED) Vanila Latte"></a>
-													<p>Vanila Latte<br>3500원</p>
-													<button class="button fit" name="(ICED) Vanila Latte">장바구니</a>
+												<div data-name="(ICED) Vanila Latte" class="box"> <a class="image featured"><img src="images/vanilaLatte(Ice).PNG" data-name="(ICED) Vanila Latte"></a>
+													<p data-name="(ICED) Vanila Latte">Vanila Latte<br>3500원</p>
+													<button class="button fit" data-name="(ICED) Vanila Latte">장바구니</a>
 												</div>
 											</td>
 											<td>
-												<div class="box"> <a class="image featured"><img src="images/caramel(Ice).PNG" name="(ICED) Caramel"></a>
-													<p>Caramel<br>3500원</p>
-													<button class="button fit" name="(ICED) Caramel">장바구니</a>
+												<div data-name="(ICED) Caramel" class="box"> <a class="image featured"><img src="images/caramel(Ice).PNG" data-name="(ICED) Caramel"></a>
+													<p data-name="(ICED) Caramel">Caramel<br>3500원</p>
+													<button class="button fit" data-name="(ICED) Caramel">장바구니</a>
 												</div>
 											</td>
 											<td>
-												<div class="box"> <a class="image featured"><img src="images/cafemocha(Ice).PNG" name="(ICED) Cafe Mocha"></a>
-													<p>Cafe Mocha<br>3500원</p>
-													<button class="button fit" name="(ICED) Cafe Mocha">장바구니</a>
+												<div data-name="(ICED) Cafe Mocha" class="box"> <a class="image featured"><img src="images/cafemocha(Ice).PNG" data-name="(ICED) Cafe Mocha"></a>
+													<p data-name="(ICED) Cafe Mocha">Cafe Mocha<br>3500원</p>
+													<button class="button fit" data-name="(ICED) Cafe Mocha">장바구니</a>
 												</div>
 											</td>
 										</tr>
@@ -159,15 +160,17 @@ else{ return;}
 					<!--장바구니-->
 					<div class="col-md-3">
 						<script>
-							menu_list.addEventListener("click", (e) => {
-								if (e.target.nodeName == "BUTTON" || "A" ) {
-									e.target.onclick = test(e.target.name);
-								}
-								else 	test(e.target.id);								
-								
-	
-							});
-						</script>
+
+menu_list.addEventListener("click", (e) => {
+var dataname = e.target.getAttribute("data-name");
+if (e.target.nodeName == "DIV" || "P" || "A" || "BUTTON") {
+
+e.target.onclick = test(dataname);
+}
+
+});
+</script>
+
 						<br><input type="text" id="count">
 					</div>
 				</div>
