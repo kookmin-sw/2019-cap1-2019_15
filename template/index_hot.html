@@ -56,7 +56,7 @@ else{ return;}
 </script> -->
 	<script>
 		var myWindow;
-
+		var ProductList = document.getElementById("ProductList");
 		function test(name) {
 			myWindow = window.open(
 				"popup.html", '_blank', "toolbar=no,scrollbars=no,resizable=yes,left=300,width=650,height=800"
@@ -158,8 +158,9 @@ else{ return;}
 					</div>
 					<!--장바구니-->
 					<div class="col-md-3">
+						
 						<script>
-							
+
 menu_list.addEventListener("click", (e) => {
 var dataname = e.target.getAttribute("data-name");
 if (e.target.nodeName == "DIV" || "P" || "A" || "BUTTON") {
@@ -168,8 +169,52 @@ e.target.onclick = test(dataname);
 }
 
 });
-						</script>
-						<br><input type="text" id="count">
+</script>
+
+						<br>
+
+
+	
+
+<hr>
+<table>
+	<thead>
+		<th>상품명</th>
+		<th>사이즈</th>
+		<th>샷추가</th>
+		<th>수량</th>
+		
+	</thead>
+	<tbody id="ProductList"></tbody>
+
+
+
+</table>	
+<button class="button fit" id="del">삭제하기
+				</div>
+				</div>
+			</div>			
+
+		</div>
+		
+	</div>
+<script>
+function delete_row() {
+var ProductList = document.getElementById("ProductList");
+if (ProductList.rows.length < 1) return;
+ProductList.deleteRow(ProductList.rows.length-1);
+
+}
+
+
+del.addEventListener("click", (e) => {
+if (e.target.nodeName == "BUTTON") {
+
+e.target.onclick = delete_row();
+}
+
+});
+</script>
 					</div>
 				</div>
 			</div>			

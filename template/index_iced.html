@@ -55,7 +55,7 @@ else{ return;}
 
 </script> -->
 	<script>
-		
+		var ProductList = document.getElementById("ProductList");
 		var myWindow;
 
 		function test(name) {
@@ -171,14 +171,50 @@ e.target.onclick = test(dataname);
 });
 </script>
 
-						<br><input type="text" id="count">
-					</div>
+						<br>
+
+
+	
+
+<hr>
+<table>
+	<thead>
+		<th>상품명</th>
+		<th>사이즈</th>
+		<th>샷추가</th>
+		<th>수량</th>
+		
+	</thead>
+	<tbody id="ProductList"></tbody>
+
+
+
+</table>	
+<button class="button fit" id="del">삭제하기
+				</div>
 				</div>
 			</div>			
 
 		</div>
 		
 	</div>
+<script>
+function delete_row() {
+var ProductList = document.getElementById("ProductList");
+if (ProductList.rows.length < 1) return;
+ProductList.deleteRow(ProductList.rows.length-1);
+
+}
+
+
+del.addEventListener("click", (e) => {
+if (e.target.nodeName == "BUTTON") {
+
+e.target.onclick = delete_row();
+}
+
+});
+</script>
 
 	<!-- Footer -->
 	<div id="footer" class="wrapper style2">
