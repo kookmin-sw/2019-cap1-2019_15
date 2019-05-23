@@ -60,7 +60,7 @@ else{ return;}
 
 		function test(name) {
 			myWindow = window.open(
-				"popup.html", '_blank', "toolbar=no,scrollbars=no,resizable=yes,left=300,width=650,height=800"
+				"popup.html", '_blank', "toolbar=no,scrollbars=no,resizable=yes,width=650,height=800"
 			);
 			myWindow.onload = function() {
 				myWindow.drink.innerText = name;
@@ -97,8 +97,9 @@ else{ return;}
 					<!-- Banner -->
 					<div class="col-md-2">
 						<div id="banner" class="container">
-							<a href="index_iced.html" class="button medium">I<br />c<br />e<br />d</a><br /><br />
-							<a href="index_hot.html" class="button medium">H<br />o<br />t</a><br /><br />
+							<a href="index_iced.html" class="button medium">I<br/>c<br/>e<br/>d</a><br/><br/>
+							<a href="index_hot.html" class="button medium">H<br/>o<br/>t</a><br/><br/>
+							<a href="index_hot.html" class="button medium">J<br/>u<br/>i<br/>c<br/>e</a><br/><br/>
 						</div>
 					</div>
 					<!-- 7(메뉴)단길이의 첫번째 열 -->
@@ -108,9 +109,6 @@ else{ return;}
 								<table class="table">
 									<tbody id="menu_list">
 										<tr>
-											<p>
-												이미지를 클릭하여 주문도 가능합니다
-											</p>
 											<!--line1-->
 											<td>
 												<div data-name="(ICED) Americano" class="box"><a class="image featured"><img src="images/americano(Ice).PNG" data-name="(ICED) Americano"></a>
@@ -160,61 +158,60 @@ else{ return;}
 					<!--장바구니-->
 					<div class="col-md-3">
 						<script>
+							menu_list.addEventListener("click", (e) => {
+								var dataname = e.target.getAttribute("data-name");
+								if (e.target.nodeName == "DIV" || "P" || "A" || "BUTTON") {
 
-menu_list.addEventListener("click", (e) => {
-var dataname = e.target.getAttribute("data-name");
-if (e.target.nodeName == "DIV" || "P" || "A" || "BUTTON") {
+									e.target.onclick = test(dataname);
+								}
 
-e.target.onclick = test(dataname);
-}
-
-});
-</script>
+							});
+						</script>
 
 						<br>
 
 
-	
-
-<hr>
-<table>
-	<thead>
-		<th>상품명</th>
-		<th>사이즈</th>
-		<th>샷추가</th>
-		<th>수량</th>
-		
-	</thead>
-	<tbody id="ProductList"></tbody>
 
 
+						<hr>
+						<table>
+							<thead>
+								<th>상품명</th>
+								<th>사이즈</th>
+								<th>샷추가</th>
+								<th>수량</th>
 
-</table>	
-<button class="button fit" id="del">삭제하기
+							</thead>
+							<tbody id="ProductList"></tbody>
+
+
+
+						</table>
+						<button class="button fit midium" id="del">삭제하기
+					</div>
 				</div>
-				</div>
-			</div>			
+			</div>
 
 		</div>
-		
+
 	</div>
-<script>
-function delete_row() {
-var ProductList = document.getElementById("ProductList");
-if (ProductList.rows.length < 1) return;
-ProductList.deleteRow(ProductList.rows.length-1);
+	<script>
+		function delete_row() {
+			var ProductList = document.getElementById("ProductList");
+			if (ProductList.rows.length < 1) return;
+			ProductList.deleteRow(ProductList.rows.length - 1);
 
-}
+		}
 
 
-del.addEventListener("click", (e) => {
-if (e.target.nodeName == "BUTTON") {
+		del.addEventListener("click", (e) => {
+			if (e.target.nodeName == "BUTTON") {
 
-e.target.onclick = delete_row();
-}
+				e.target.onclick = delete_row();
+			}
 
-});
-</script>
+		});
+	</script>
 
 	<!-- Footer -->
 	<div id="footer" class="wrapper style2">
