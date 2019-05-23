@@ -8,6 +8,8 @@ import cv2
 from pymouse import PyMouse
 m = PyMouse()
 
+
+
 ANCHOR_POINT = (0, 0)
 
 (nStart, nEnd) = face_utils.FACIAL_LANDMARKS_IDXS["right_eye"]
@@ -45,7 +47,8 @@ def direction(r_eye_point, anchor_point, w, h, multiple=1):
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
+
 
 def extract_eye(image, left, bottom_left, bottom_right, right, upper_right, upper_left):
 	lower_bound = max([left[1], right[1], bottom_left[1], bottom_right[1], upper_left[1], upper_right[1]])
@@ -61,8 +64,9 @@ def extract_eye(image, left, bottom_left, bottom_right, right, upper_right, uppe
 ANCHOR = 0
 
 while(True):
-
+	print(m.position())
 	ret, image = cap.read()
+
 	gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 
@@ -86,20 +90,24 @@ while(True):
 
 		x, y = ANCHOR_POINT
 		nx, ny = r_eye_point
-		w, h = 60, 20
+		w= 60
+		h1= 5
+		h= 10
 		multiple = 1
 		cv2.line(image, ANCHOR_POINT, r_eye_point, (0,0,255), 2)
 
 		dir = direction(r_eye_point, ANCHOR_POINT, w, h)
-		#cv2.putText(image, dir.upper(), (10, 90), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255,0,0), 2)
+		#cv2.putText(image, dir.upper(), (10, 90), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255,0,0), 2) 3840
 		drag = 18
 		xx = list(m.position())
 		xxx = xx[0]
 		yyy = xx[1]
 		if dir == 'up':
-			m.move(xxx,yyy-30)
+			m.move(xxx, 600)
 		elif dir == 'down':
-			m.move(xxx,yyy+30)
+			m.move(xxx,3200)
+		else :
+			m.move(xxx,1800)
 
 
 
@@ -140,7 +148,7 @@ while(True):
 
 		gray_right_eye = cv2.cvtColor(right_eye, cv2.COLOR_BGR2GRAY)
 		gray_right_eye = cv2.GaussianBlur(gray_right_eye, (7, 7), 0)
-		_, threshold = cv2.threshold(gray_right_eye, 30, 255, cv2.THRESH_BINARY_INV)
+		_, threshold = cv2.threshold(gray_right_eye, 20, 255, cv2.THRESH_BINARY_INV)
 		contours, _ = cv2.findContours(threshold, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 		contours = sorted(contours, key=lambda x: cv2.contourArea(x), reverse=True)
 
@@ -155,20 +163,22 @@ while(True):
 			# print((int(x)+int(w/2)))
 			# print((int(y)+int(h/2)))
 
-			#move mouse
+			#move mouse 1920 4080
 			xx = list(m.position())
 			xxx = xx[0]
 			yyy = xx[1]
-			if((int(x)+int(w/2)) < 30 ):
-				m.move(xxx + 30,yyy)
-			if((int(x)+int(w/2)) > 41 ):
-				m.move(xxx - 30,yyy)
+			if((int(x)+int(w/2)) < 33 ):
+				m.move(3000,yyy)
+			elif((int(x)+int(w/2)) > 37 ):
+				m.move(3700,yyy)
+			else :
+				m.move(2300,yyy)
 
 
 		check = 1
 		cv2.imshow("Threshold", threshold)
-		cv2.imshow("gray right_eye", gray_right_eye)
-		cv2.imshow("right_eye", right_eye)
+		#cv2.imshow("gray right_eye", gray_right_eye)
+		#cv2.imshow("right_eye", right_eye)
 		cv2.imshow("image",image)
 
 	if check == 0:
