@@ -23,7 +23,9 @@
 		</noscript>
 
 <!-- add by CHY(START) -->
+<!-- 팝업창 띄우기 -->
 <script>
+
 		var ProductList = document.getElementById("ProductList");
 		var myWindow;
 
@@ -36,7 +38,7 @@
 			};
 		}
 	</script>
-<!-- add bt CHY (END) -->
+<!-- add by CHY (END) -->
 	</head>
 	<body>
 
@@ -73,49 +75,49 @@
 									<tr>
 							<div class="row no-collapse-1">
 
-								<section class="4u">  <a class="image featured"><img src="images/americano(Ice).PNG" data-name="(ICED) Americano"></a>
+								<td>  <a class="image featured"><img src="images/americano(Ice).PNG" data-name="(ICED) Americano"></a>
 									<div class="box" data-name="(ICED) Americano">
 										<p data-name="(ICED) Americano">Americano<br>3500원</p>
 										<button	class="button fit" data-name="(ICED) Americano">장바구니</button>
 									</div>
-								</section>
+								</td>
 								<!-- 아메리카노 -->
-								<section class="4u"> <a class="image featured"><img src="images/cappuccino(Ice).PNG" data-name="(ICED) Cappuccino"></a>
+								<td><a class="image featured"><img src="images/cappuccino(Ice).PNG" data-name="(ICED) Cappuccino"></a>
 									<div class="box" data-name="(ICED) Cappuccino">
 										<p data-name="(ICED) Cappuccino">Cappuccino<br>3700원</p>
 										<button class="button fit" data-name="(ICED) Cappuccino">장바구니</button>
 									</div>
-								</section>
+								</td>
 								<!--카푸치노 -->
-								<section class="4u"> <a class="image featured"><img src="images/cafeLatte(Ice).PNG" data-name="(ICED) CafeLatte"></a>
+								<td> <a class="image featured"><img src="images/cafeLatte(Ice).PNG" data-name="(ICED) CafeLatte"></a>
 									<div class="box" data-name="(ICED) CafeLatte">
 										<p data-name="(ICED) CafeLatte">CafeLatte<br>3600원</p>
 										<button class="button fit" data-name="(ICED) CafeLatte">장바구니</button>
 									</div>
-								</section>
+								</td>
 								<!--카페라때-->
 							</div></tr>
 							<tr><div class="row no-collapse-1">
-								<section class="4u"> <a class="image featured"><img src="images/vanilaLatte(Ice).PNG" data-name="(ICED) Vanila Latte"></a>
+								<td><a class="image featured"><img src="images/vanilaLatte(Ice).PNG" data-name="(ICED) Vanila Latte"></a>
 									<div class="box" data-name="(ICED) Vanila Latte">
 										<p data-name="(ICED) Vanila Latte">Vanila Latte<br>3500원</p>
 										<button class="button fit" data-name="(ICED) Vanila Latte">장바구니</button>
 									</div>
-								</section>
+								</td>
 								<!--바닐라라때 -->
-								<section class="4u"> <a class="image featured"><img src="images/caramel(Ice).PNG" data-name="(ICED) Caramel"></a>
+								<td><a class="image featured"><img src="images/caramel(Ice).PNG" data-name="(ICED) Caramel"></a>
 									<div class="box" data-name="(ICED) Caramel">
 										<p data-name="(ICED) Caramel">Caramel<br>3500원</p>
 										<button class="button fit" data-name="(ICED) Caramel">장바구니</button>
 									</div>
-								</section>
+								</td>
 								<!--카라멜마끼야토 -->
-								<section class="4u"> <a class="image featured"><img src="images/cafemocha(Ice).PNG" data-name="(ICED) Cafe Mocha"></a>
+								<td> <a class="image featured"><img src="images/cafemocha(Ice).PNG" data-name="(ICED) Cafe Mocha"></a>
 									<div class="box" data-name="(ICED) Cafe Mocha">
 										<p data-name="(ICED) Cafe Mocha">Cafe Mocha<br>3500원</p>
 										<button class="button fit" data-name="(ICED) Cafe Mocha">장바구니</button>
 									</div>
-								</section>
+								</td>
 								<!--카페모카-->
 
 							</div></tr></tbody></table>
@@ -125,7 +127,8 @@
 
 
 				</div>
-		
+		<!-- add by CHY (START) -->
+		<!-- 커피메뉴 이벤트 영역 확대 -->
 					<script>
 
 menu_list.addEventListener("click", (e) => {
@@ -137,6 +140,8 @@ e.target.onclick = test(dataname);
 
 });
 </script>
+
+<!-- add by CHY (END) -->
 
 	<!-- Footer -->
 		<div id="footer" class="wrapper style2">
@@ -174,7 +179,10 @@ e.target.onclick = test(dataname);
 				</section>
 			</div>
 		</div>
+<!-- add by CHY (START) -->
+<!-- 주문항목 삭제하기-->
 <script>
+
 function delete_row() {
 var ProductList = document.getElementById("ProductList");
 if (ProductList.rows.length < 1) return;
@@ -191,7 +199,7 @@ e.target.onclick = delete_row();
 
 });
 </script>
-
+<!-- add by CHY (END) -->
 	<!-- Copyright -->
 		<div id="copyright">
 			<div class="container">
