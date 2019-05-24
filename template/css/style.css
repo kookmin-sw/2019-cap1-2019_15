@@ -478,6 +478,20 @@
 			padding: 0.80em 2em;
 			font-size: 1.6em;
 		}
+		input[type="submit"].mid_large,
+		input[type="reset"].mid_large,
+		input[type="button"].mid_large,
+		.button.mid_large {
+			padding: 1.00em 2.5em;
+			font-size: 2.1em;
+		}
+		input[type="submit"].large,
+		input[type="reset"].large,
+		input[type="button"].large,
+		.button.large {
+			padding: 1.20em 3em;
+			font-size: 3.0em;
+		}
 
 /* Wrapper */
 
