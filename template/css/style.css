@@ -87,10 +87,7 @@
 		padding: 1em 0 1em 2em;
 	}
 
-	section.special {
-		text-align: center;
-	}
-	article.special {
+	section.special, article.special {
 		text-align: center;
 	}
 
@@ -558,13 +555,14 @@
 /* Banner */
 
 	#banner {
-		text-align: left;
+		text-align: center;
 		color: #fff;
 		padding: 0em 4em;
+		margin-bottom: 6em;
 	}
 
 		#banner p {
-			font-size: 1.7em;
+			font-size: 1.75em;
 			line-height: 1.75em;
 		}
 
@@ -624,10 +622,10 @@
 /* Box */
 
 	.box {
-		padding: 1em 1em;
+		padding: 3em 2em;
 		background: #FFF;
 		text-align: center;
-		border-radius: 1px 1px 3px 3px;
+		border-radius: 0px 0px 6px 6px;
 	}
 /* text-align */
 	.centeringContainer {

@@ -44,7 +44,7 @@
 			}
 
 		.alertify-buttons {
-			padding: 14px 15px 15px;
+			padding: 14px 15px 15px; // 컨펌창 사이즈 조절 
 			background: #F5F5F5;
 			border-top: 1px solid #DDD;
 			border-radius: 0 0 6px 6px;

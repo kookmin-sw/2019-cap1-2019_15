@@ -5,298 +5,229 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html>
+	<head>
+		<title>Capstone team 15 - Eye can do it</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.dropotron.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<script src="js/app.js"></script>
+		<!-- Latest compiled and minified CSS
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		jQuery library
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		Latest compiled JavaScript
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
 
-<head>
-	<title>Capstone team 15 - Eye can do it</title>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-
-	<!--부트스트랩 시작-->
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-	<!-- Bootstrap파일 위치 설정 -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-	<!--부트스트랩 끝-->
-
-	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery.dropotron.min.js"></script>
-	<script src="js/skel.min.js"></script>
-	<script src="js/skel-layers.min.js"></script>
-	<script src="js/init.js"></script>
-	<!-- <script src="js/app.js"></script> -->
-	<noscript>
-		<link rel="stylesheet" href="css/skel.css" />
-		<link rel="stylesheet" href="css/style.css" />
-		<link rel="stylesheet" href="css/style-wide.css" />
-	</noscript>
-
-	<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
-	<!-- add by CHY -->
-	<!-- <script type="text/javascript">
-function confirmEvent(){
-if (confirm("상품을 추가하시겠습니까?") == true){
-	var offsetstr=$("#order").offset();
-	$('html, body').animate({scrollTop : offsetstr.top}, 1);
-  }
-else{ return;}
-}
-
-</script> -->
-	<script>
-		var myWindow;
-		var ProductList = document.getElementById("ProductList");
-		function test(name) {
-			myWindow = window.open(
-				"popup.html", '_blank', "toolbar=no,scrollbars=no,resizable=yes,left=300,width=650,height=800"
-			);
-			myWindow.onload = function() {
-				myWindow.drink.innerText = name;
-			};
-		}
-	</script>
-</head>
-
-<body>
-
-	<!-- Wrapper -->
-	<div class="wrapper style1">
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+<!-- add by CHY -->
+<script type="text/javascript">
 
 
-		<!-- Header -->
-		<div id="header" class="skel-panels-fixed">
-			<div id="logo">
-				<h1><a href="index.html">Eye can do it</a></h1>
-				<span class="tag">by Kookmin Univercity SW</span>
-			</div>
-			<nav id="nav">
-				<ul>
-					<li class="active"><a href="index_iced.html">Homepage</a></li>
-				</ul>
-			</nav>
-		</div>
+</script>
+	</head>
+	<body>
 
-		<!-- Extra -->
+		<!-- Wrapper -->
+			<div class="wrapper style1">
 
-		<div id="extra">
-			<div class="container-fluid">
-				<div class="row">
-					<!-- 2(종류)단길이의 첫번째 열 -->
-					<!-- Banner -->
-					<div class="col-md-2">
-						<div id="banner" class="container">
-							<a href="index_iced.html" class="button medium">I<br />c<br />e<br />d</a><br /><br />
-							<a href="index_hot.html" class="button medium">H<br />o<br />t</a><br /><br />
+
+				<!-- Header -->
+					<div id="header" class="skel-panels-fixed">
+						<div id="logo">
+							<h1><a href="index.html">Eye can do it</a></h1>
+							<span class="tag">by Kookmin Univercity SW</span>
 						</div>
+						<nav id="nav">
+							<ul>
+								<li class="active"><a href="index.html">Homepage</a></li>
+							</ul>
+						</nav>
 					</div>
-					<!-- 7(메뉴)단길이의 첫번째 열 -->
-					<div class="col-md-7">
-						<div class="jumbotron">
-							<div class="container">
-								<table class="table">
-									<tbody id="menu_list">
-										<tr>
-											<p>
-												이미지를 클릭하여 주문도 가능합니다
-											</p>
-											<!--line1-->
-											<td>
-												<div data-name="(HOT) Americano" class="box"><a class="image featured"><img src="images/americano(Hot).PNG" data-name="(HOT) Americano"></a>
-													<p data-name="(HOT) Americano">Americano<br>3500원</p>
-													<button class="button fit" data-name="(HOT) Americano">장바구니</a>
-												</div>
-											</td>
-											<td>
-												<div data-name="(HOT) Cappuccino" class="box"><a class="image featured"><img src="images/cappuccino(Hot).PNG" data-name="(HOT) Cappuccino"></a>
-													<p data-name="(HOT) Cappuccino">Cappuccino<br>3700원</p>
-													<button class="button fit" data-name="(HOT) Cappuccino">장바구니</a>
-												</div>
-											</td>
-											<td>
-												<div data-name="(Hot) CafeLatte" class="box"> <a class="image featured"><img src="images/cafeLatte(Hot).PNG" data-name="(HOT) CafeLatte"></a>
-													<p data-name="(Hot) CafeLatte">CafeLatte<br>3600원</p>
-													<button class="button fit" data-name="(Hot) CafeLatte">장바구니</a>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<!--line2-->
-											<td>
-												<div data-name="(HOT) Vanila Latte" class="box"> <a class="image featured"><img src="images/vanilaLatte(Hot).PNG" data-name="(HOT) Vanila Latte"></a>
-													<p data-name="(HOT) Vanila Latte">Vanila Latte<br>3500원</p>
-													<button class="button fit" data-name="(HOT) Vanila Latte">장바구니</a>
-												</div>
-											</td>
-											<td>
-												<div data-name="(HOT) Caramel" class="box"> <a class="image featured"><img src="images/caramel(Hot).PNG" data-name="(HOT) Caramel"></a>
-													<p data-name="(HOT) Caramel">Caramel<br>3500원</p>
-													<button class="button fit" data-name="(HOT) Caramel">장바구니</a>
-												</div>
-											</td>
-											<td>
-												<div data-name="(HOT) Cafe Mocha"class="box"> <a class="image featured"><img src="images/cafemocha(Hot).PNG" data-name="(HOT) Cafe Mocha"></a>
-													<p data-name="(HOT) Cafe Mocha">Cafe Mocha<br>3500원</p>
-													<button class="button fit" data-name="(HOT) Cafe Mocha">장바구니</a>
-												</div>
-											</td>
-										</tr>
-									</tbody>
-								</table>
+
+				<!-- Banner -->
+					<div id="banner" class="container">
+						<section>
+							<p>Choose drink</p>
+							<a href="index.html" class="button medium">Iced</a>   <a href="index_ice.html" class="button medium">Hot</a>   <a href="index_juice.html" class="button medium">beverage</a>
+						</section>
+					</div>
+
+				<!-- Extra -->
+					<div id="extra">
+						<div class="container">
+							<div class="row no-collapse-1">
+
+								<section class="4u"> <a href="#" class="image featured"><img src="images/americano(Ice).PNG" alt=""></a>
+									<div class="box">
+										<p id=menu data-product-id="menu">Americano<br>3500원</p>
+										<a onclick="cart()" class="button">장바구니</a>
+									</div>
+								</section>
+								<!-- 아메리카노 -->
+								<section class="4u"> <a href="#" class="image featured"><img src="images/cappuccino(Ice).PNG" alt=""></a>
+									<div class="box">
+										<p id=menu data-product-id="menu">Cappuccino<br>3700원</p>
+										<a onclick="cart()" class="button">장바구니</a>
+									</div>
+								</section>
+								<!--카푸치노 -->
+								<section class="4u"> <a href="#" class="image featured"><img src="images/cafeLatte(Ice).PNG" alt=""></a>
+									<div class="box">
+										<p id=menu data-product-id="menu">cafeLatte<br>3600원</p>
+										<a onclick="cart()" class="button">장바구니</a>
+									</div>
+								</section>
+								<!--카페라때-->
+							</div>
+
+							<div class="row no-collapse-1">
+								<section class="4u"> <a href="#" class="image featured"><img src="images/vanilaLatte(Ice).PNG" alt=""></a>
+									<div class="box">
+										<p id=menu data-product-id="menu">Vanila latte<br>3500원</p>
+										<a onclick="cart()" class="button">장바구니</a>
+									</div>
+								</section>
+								<!--바닐라라때 -->
+								<section class="4u"> <a href="#" class="image featured"><img src="images/caramel(Ice).PNG" alt=""></a>
+									<div class="box">
+										<p id=menu data-product-id="menu">caramel<br>3500원</p>
+										<a onclick="cart()" class="button">장바구니</a>
+									</div>
+								</section>
+								<!--카라멜마끼야토 -->
+								<section class="4u"> <a href="#" class="image featured"><img src="images/cafemocha(Ice).PNG" alt=""></a>
+									<div class="box">
+										<p id=menu data-product-id="menu">Cafe mocha<br>3500원</p>
+										<a onclick="cart()" class="button">장바구니</a>
+									</div>
+								</section>
+								<!--카페모카-->
+
 							</div>
 						</div>
 					</div>
-					<!--장바구니-->
-					<div class="col-md-3">
-						
-						<script>
 
-menu_list.addEventListener("click", (e) => {
-var dataname = e.target.getAttribute("data-name");
-if (e.target.nodeName == "DIV" || "P" || "A" || "BUTTON") {
+				<!-- Main -->
+					<!-- <div id="main">
+						<div class="container">
+							<div class="row">
 
-e.target.onclick = test(dataname);
-}
-
-});
-</script>
-
-						<br>
-
-
-	
-
-<hr>
-<table>
-	<thead>
-		<th>상품명</th>
-		<th>사이즈</th>
-		<th>샷추가</th>
-		<th>수량</th>
-		
-	</thead>
-	<tbody id="ProductList"></tbody>
-
-
-
-</table>	
-<button class="button fit" id="del">삭제하기
-				</div>
-				</div>
-			</div>			
-
-		</div>
-		
-	</div>
-<script>
-function delete_row() {
-var ProductList = document.getElementById("ProductList");
-if (ProductList.rows.length < 1) return;
-ProductList.deleteRow(ProductList.rows.length-1);
-
-}
-
-
-del.addEventListener("click", (e) => {
-if (e.target.nodeName == "BUTTON") {
-
-e.target.onclick = delete_row();
-}
-
-});
-</script>
-					</div>
-				</div>
-			</div>			
-
-		</div>
-		
+								Content
+								<div class="6u">
+									<section>
+										<ul class="style">
+											<li class="fa fa-wrench">
+												<h3>섹션 1</h3>
+												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
+											<li class="fa fa-leaf">
+												<h3>Aliquam luctus</h3>
+												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
+										</ul>
+									</section>
+								</div>
+								<div class="6u">
+									<section>
+										<ul class="style">
+											<li class="fa fa-cogs">
+												<h3>Integer ultrices</h3>
+												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
+											<li class="fa fa-road">
+												<h3>Aliquam luctus</h3>
+												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
+										</ul>
+									</section>
+								</div>
+							</div>
+						</div>
+					</div> -->
+		<br><br>
 	</div>
 
 	<!-- Footer -->
-	<div id="footer" class="wrapper style2">
-		<div class="container">
-			<section>
-				<header class="major">
-					<h2>주문내역</h2>
-					<span class="byline">주문내역을 확인해주세요 !</span>
-				</header>
-				<!-- ---------------------------------------- -->
-				<table>
-					<colgroup>
-						<col width=5%>
-						<col width=20%>
-						<col width=10%>
-						<col width=10%>
-						<col width=10%>
-						<col width=10%>
-						<!-- 번호 상품명 가격 수량 총금액 주문관리(삭제)  -->
-					</colgroup>
-					<thead>
-						<tr>
-							<th scope="col">번호</th>
-							<th scope="col">상품명(옵션)</th>
-							<th scope="col">가격</th>
-							<th scope="col">수량</th>
-							<th scope="col">총 금액</th>
-							<th scope="col">주문관리(삭제)</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
+		<div id="footer" class="wrapper style2">
+			<div class="container">
+				<section>
+					<header class="major">
+						<h2>주문내역</h2>
+						<span class="byline">주문내역을 확인해주세요 !</span>
+					</header>
+					<!-- ---------------------------------------- -->
+					<table>
+						<colgroup>
+							<col width = 5%>
+							<col width = 20%>
+							<col width = 10%>
+							<col width = 10%>
+							<col width = 10%>
+							<col width = 10%>
+							<!-- 번호 상품명 가격 수량 총금액 주문관리(삭제)  -->
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">번호</th>
+								<th scope="col">상품명(옵션)</th>
+								<th scope="col">가격</th>
+								<th scope="col">수량</th>
+								<th scope="col">총 금액</th>
+								<th scope="col">주문관리(삭제)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
 
-						</tr>
-					</tbody>
-
-
-				</table>
+							</tr>
+						</tbody>
 
 
-				<br /><br /><br />
-				<!-- ---------------------------------------- -->
-				<div class="row half">
-					<div class="12u">
-						<ul class="actions">
-							<li>
-								<input type="submit" value="주문하기" class="button alt" onclick="complete()" />
-							</li>
-						</ul>
-					</div>
-				</div>
-			</section>
-		</div>
-	</div>
+					</table>
 
-	<!-- Copyright -->
-	<div id="copyright">
-		<div class="container">
-			<div class="copyright">
-				<p>Contribute: <a href="http://templated.co">MININ HAN, CHY</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)</p>
-				<ul class="icons">
-					<li><a href="https://github.com/kookmin-sw/2019-cap1-2019_15" class="fa fa-github"><span>Github</span></a></li>
-					<li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
-					<li><a href="#" class="fa fa-google-plus"><span>Google+</span></a></li>
-				</ul>
+
+						<br/><br/><br/>
+						<!-- ---------------------------------------- -->
+						<div class="row half">
+							<div class="12u">
+								<ul class="actions">
+									<li>
+										<input type="submit" value="주문하기" class="button alt" onclick="complete()"/>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</form>
+				</section>
 			</div>
 		</div>
-	</div>
 
-</body>
+	<!-- Copyright -->
+		<div id="copyright">
+			<div class="container">
+				<div class="copyright">
+					<p>Design: <a href="http://templated.co">MININ HAN</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)</p>
+					<ul class="icons">
+						<li><a href="https://github.com/kookmin-sw/2019-cap1-2019_15" class="fa fa-github"><span>Github</span></a></li>
+						<li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
+						<li><a href="#" class="fa fa-google-plus"><span>Google+</span></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
 
+	</body>
 </html>
