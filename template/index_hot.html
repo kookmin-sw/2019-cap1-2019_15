@@ -30,11 +30,24 @@
 		</noscript>
 
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
-<!-- add by CHY -->
-<script type="text/javascript">
 
 
-</script>
+	<!-- add by CHY -->
+	
+	<script>
+		var ProductList = document.getElementById("ProductList");
+		var myWindow;
+
+		function test(name) {
+			myWindow = window.open(
+				"popup.html", '_blank', "toolbar=no,scrollbars=no,resizable=yes,left=300,width=650,height=800"
+			);
+			myWindow.onload = function() {
+				myWindow.drink.innerText = name;
+			};
+		}
+	</script>
+</head>
 	</head>
 	<body>
 
@@ -50,7 +63,7 @@
 						</div>
 						<nav id="nav">
 							<ul>
-								<li class="active"><a href="index.html">Homepage</a></li>
+								<li class="active"><a href="index_iced.html">Homepage</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -59,57 +72,57 @@
 					<div id="banner" class="container">
 						<section>
 							<p>Choose drink</p>
-							<a href="index.html" class="button medium">Iced</a>   <a href="index_ice.html" class="button medium">Hot</a>   <a href="index_juice.html" class="button medium">beverage</a>
+							<a href="index_iced.html" class="button medium">Iced</a>   <a href="index_hot.html" class="button medium">Hot</a>   <a href="index_juice.html" class="button medium">beverage</a>
 						</section>
 					</div>
 
 				<!-- Extra -->
 					<div id="extra">
-						<div class="container">
+						<div  id="menu_list" class="container">
 							<div class="row no-collapse-1">
 
-								<section class="4u"> <a href="#" class="image featured"><img src="images/americano(Ice).PNG" alt=""></a>
+								<section class="4u"> <a class="image featured"><img src="images/americano(Hot).PNG" data-name="(HOT) Americano" ></a>
 									<div class="box">
-										<p id=menu data-product-id="menu">Americano<br>3500원</p>
-										<a onclick="cart()" class="button">장바구니</a>
+										<p id=menu data-name="(HOT) Americano">Americano<br>3500원</p>
+										<a data-name="(HOT) Americano" class="button">장바구니</a>
 									</div>
 								</section>
 								<!-- 아메리카노 -->
-								<section class="4u"> <a href="#" class="image featured"><img src="images/cappuccino(Ice).PNG" alt=""></a>
+								<section class="4u"> <a class="image featured"><img src="images/cappuccino(Hot).PNG" data-name="(HOT) Cappuccino"></a>
 									<div class="box">
-										<p id=menu data-product-id="menu">Cappuccino<br>3700원</p>
-										<a onclick="cart()" class="button">장바구니</a>
+										<p id=menu data-name="(HOT) Cappuccino">Cappuccino<br>3700원</p>
+										<a data-name="(HOT) Cappuccino"class="button">장바구니</a>
 									</div>
 								</section>
 								<!--카푸치노 -->
-								<section class="4u"> <a href="#" class="image featured"><img src="images/cafeLatte(Ice).PNG" alt=""></a>
+								<section class="4u"> <a class="image featured"><img src="images/cafeLatte(Hot).PNG" data-name="(HOT) CafeLatte"></a>
 									<div class="box">
-										<p id=menu data-product-id="menu">cafeLatte<br>3600원</p>
-										<a onclick="cart()" class="button">장바구니</a>
+										<p id=menu data-name="(HOT) Cappuccino">CafeLatte<br>3600원</p>
+										<a data-name="(HOT) Cappuccino" class="button">장바구니</a>
 									</div>
 								</section>
 								<!--카페라때-->
 							</div>
 
 							<div class="row no-collapse-1">
-								<section class="4u"> <a href="#" class="image featured"><img src="images/vanilaLatte(Ice).PNG" alt=""></a>
+								<section class="4u"> <a class="image featured"><img src="images/vanilaLatte(Hot).PNG" data-name="(HOT) Vanila Latte"></a>
 									<div class="box">
-										<p id=menu data-product-id="menu">Vanila latte<br>3500원</p>
-										<a onclick="cart()" class="button">장바구니</a>
+										<p id=menu data-name="(HOT) Vanila Latte">Vanila Latte<br>3500원</p>
+										<a data-name="(HOT) Vanila Latte" class="button">장바구니</a>
 									</div>
 								</section>
 								<!--바닐라라때 -->
-								<section class="4u"> <a href="#" class="image featured"><img src="images/caramel(Ice).PNG" alt=""></a>
+								<section class="4u"> <a class="image featured"><img src="images/caramel(Hot).PNG" data-name="(HOT) Caramel"></a>
 									<div class="box">
-										<p id=menu data-product-id="menu">caramel<br>3500원</p>
-										<a onclick="cart()" class="button">장바구니</a>
+										<p id=menu data-name="(HOT) Caramel">Caramel<br>3500원</p>
+										<a data-name="(HOT) Caramel" class="button">장바구니</a>
 									</div>
 								</section>
 								<!--카라멜마끼야토 -->
-								<section class="4u"> <a href="#" class="image featured"><img src="images/cafemocha(Ice).PNG" alt=""></a>
+								<section class="4u"> <a class="image featured"><img src="images/cafemocha(Hot).PNG" data-name="(HOT) Cafe Mocha"></a>
 									<div class="box">
-										<p id=menu data-product-id="menu">Cafe mocha<br>3500원</p>
-										<a onclick="cart()" class="button">장바구니</a>
+										<p id=menu data-name="(HOT) Cafe Mocha">Cafe Mocha<br>3500원</p>
+										<a data-name="(HOT) Cafe Mocha" class="button">장바구니</a>
 									</div>
 								</section>
 								<!--카페모카-->
@@ -118,85 +131,74 @@
 						</div>
 					</div>
 
-				<!-- Main -->
-					<!-- <div id="main">
-						<div class="container">
-							<div class="row">
+					<script>
 
-								Content
-								<div class="6u">
-									<section>
-										<ul class="style">
-											<li class="fa fa-wrench">
-												<h3>섹션 1</h3>
-												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
-											<li class="fa fa-leaf">
-												<h3>Aliquam luctus</h3>
-												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
-										</ul>
-									</section>
-								</div>
-								<div class="6u">
-									<section>
-										<ul class="style">
-											<li class="fa fa-cogs">
-												<h3>Integer ultrices</h3>
-												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
-											<li class="fa fa-road">
-												<h3>Aliquam luctus</h3>
-												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
-										</ul>
-									</section>
-								</div>
-							</div>
-						</div>
-					</div> -->
+menu_list.addEventListener("click", (e) => {
+var dataname = e.target.getAttribute("data-name");
+if (e.target.nodeName == "SECTION" || "DIV" || "P" || "A" || "BUTTON") {
+
+e.target.onclick = test(dataname);
+}
+
+});
+</script>
+
+
 		<br><br>
 	</div>
 
+<hr>
+
 	<!-- Footer -->
-		<div id="footer" class="wrapper style2">
-			<div class="container">
-				<section>
-					<header class="major">
-						<h2>주문내역</h2>
-						<span class="byline">주문내역을 확인해주세요 !</span>
-					</header>
-					<!-- ---------------------------------------- -->
-					<table>
-						<colgroup>
-							<col width = 5%>
-							<col width = 20%>
-							<col width = 10%>
-							<col width = 10%>
-							<col width = 10%>
-							<col width = 10%>
-							<!-- 번호 상품명 가격 수량 총금액 주문관리(삭제)  -->
-						</colgroup>
-						<thead>
-							<tr>
-								<th scope="col">번호</th>
-								<th scope="col">상품명(옵션)</th>
-								<th scope="col">가격</th>
-								<th scope="col">수량</th>
-								<th scope="col">총 금액</th>
-								<th scope="col">주문관리(삭제)</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-
-							</tr>
-						</tbody>
+	<div id="footer" class="wrapper style2">
+		<div class="container">
+			<section>
+				<header class="major">
+					<h2>주문내역</h2>
+					<span class="byline">주문내역을 확인해주세요 !</span>
+				</header>
+				<!-- ---------------------------------------- -->
+				<table>
+	<thead>
+		<th>상품명</th>
+		<th>사이즈</th>
+		<th>샷추가</th>
+		<th>수량</th>
+		
+	</thead>
+	<tbody id="ProductList"></tbody>
 
 
-					</table>
+
+</table>	
+<button class="button fit" id="del">삭제하기</button>
+<button class="button fit" >주문하기</button>
+				</div>
+				</div>
+			</div>			
+
+		</div>
+		
+	</div>
+<script>
+function delete_row() {
+var ProductList = document.getElementById("ProductList");
+if (ProductList.rows.length < 1) return;
+ProductList.deleteRow(ProductList.rows.length-1);
+
+}
+
+
+del.addEventListener("click", (e) => {
+if (e.target.nodeName == "BUTTON") {
+
+e.target.onclick = delete_row();
+}
+
+});
+</script>
+
+
 
 
 						<br/><br/><br/>
@@ -205,7 +207,7 @@
 							<div class="12u">
 								<ul class="actions">
 									<li>
-										<input type="submit" value="주문하기" class="button alt" onclick="complete()"/>
+										
 									</li>
 								</ul>
 							</div>
