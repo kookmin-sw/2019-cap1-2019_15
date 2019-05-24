@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Capstone team 15 - Eye can do it</title>
+		
+		
+<script>
+
+var ProductList = document.getElementById("ProductList");
+		var myWindow;
+
+		function test(name) {
+			myWindow = window.open(
+				"popup.html", '_blank', "toolbar=no,scrollbars=no,resizable=yes,left=300,width=650,height=800"
+			);
+			myWindow.onload = function() {
+				myWindow.drink.innerText = name;
+			};
+		}
+
+ var list = [
+ 	{ name:"Americano", price:3500 , type:"HC"},
+    { name:"Cappuccino", price:3700 , type:"HC"},
+    { name:"Caffe Latte", price:3600 , type:"HC"},
+    { name:"Vanila Latte", price:5000, type:"HC"},
+    { name:"Caramel", price:7000, type:"HC"},
+    { name:"Cafe Mocha", price:3000, type:"HC"},
+ ]
+var menu={hot:[],ice:[]};
+list.forEach((e)=>{
+	if(e.type.indexOf("H") != -1){ menu.hot.push(e);}
+	if(e.type.indexOf("C") != -1){ menu.ice.push(e);}
+});
+function show(type){
+	container.innerHTML = "";
+	menu[type].forEach((e)=>{
+	var mType;
+    	var el = document.createElement("div");
+    	el.classList.add("box");
+    	if(type == "hot"){
+    		mType = "(HOT)";
+    	}
+    	if(type == "ice"){
+    		mType = "(ICED)";
+    	}
+   		el.setAttribute("data-name", mType);
+        el.innerHTML += '<a class="image featured"><img src="images/'+mType+' '+e.name+'.PNG" width = "130" height = "130" data-name="'+mType+' '+e.name+'"></a>';
+       	el.innerHTML += '<p data-name="'+mType+' Americano">'+e.name+'<br>'+ e.price+'원</p>';
+       	el.innerHTML += '<button class="button fit" data-name="'+mType+' '+e.name+'">장바구니</button>'; 
+        
+        container.appendChild(el);
+    });
+}
+
+
+
+
+
+</script>
+</head>
+
+<body onload="show('ice');">
+<button onclick="show('ice');">ice</button>
+<button onclick="show('hot');">hot</button>
+
+
+
+<div id="menu_list" >
+<div id="container" style='display:inline;min-width:1200px;'>
+
+</div></div>
+<div id="footer" class="wrapper style2">
+			<div class="container">
+				<section>
+					<header class="major">
+						<h2>주문내역</h2>
+						<span class="byline">주문내역을 확인해주세요 !</span>
+					</header>
+					<!-- ---------------------------------------- -->
+					<table>
+						
+						<thead>
+							<tr>
+								<th>상품명</th>
+								<th>사이즈</th>
+								<th>샷추가</th>
+								<th>수량</th>
+							</tr>
+						</thead>
+						<tbody id="ProductList"></tbody>
+
+
+					</table>
+
+
+						<br/><br/><br/>
+						<button class="button fit" id="del">삭제하기</button>
+				</section>
+			</div>
+		</div>
+
+<script>
+menu_list.addEventListener("click", (e) => {
+var dataname = e.target.getAttribute("data-name");
+if (e.target.nodeName == "DIV" || "P" || "A" || "BUTTON") {
+
+e.target.onclick = test(dataname);
+}
+
+});
+
+function delete_row() {
+var ProductList = document.getElementById("ProductList");
+if (ProductList.rows.length < 1) return;
+ProductList.deleteRow(ProductList.rows.length-1);
+
+}
+
+
+del.addEventListener("click", (e) => {
+if (e.target.nodeName == "BUTTON") {
+
+e.target.onclick = delete_row();
+}
+
+});
+</script>
+</body>
+</html>
