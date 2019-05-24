@@ -31,9 +31,8 @@
 
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 
-
-	<!-- add by CHY -->
-	
+	<!-- add by CHY(START) -->
+	<!-- 팝업창 띄우기 -->
 	<script>
 		var ProductList = document.getElementById("ProductList");
 		var myWindow;
@@ -47,6 +46,7 @@
 			};
 		}
 	</script>
+	<!-- add by CHY(END) -->
 </head>
 	</head>
 	<body>
@@ -130,9 +130,10 @@
 							</div>
 						</div>
 					</div>
-
+	<!-- add by CHY(START) -->
+	<!-- 메뉴영역 클릭시 팝업창 띄우기-->
 					<script>
-
+	
 menu_list.addEventListener("click", (e) => {
 var dataname = e.target.getAttribute("data-name");
 if (e.target.nodeName == "SECTION" || "DIV" || "P" || "A" || "BUTTON") {
@@ -142,6 +143,8 @@ e.target.onclick = test(dataname);
 
 });
 </script>
+	<!-- add by CHY(END) -->
+
 
 
 		<br><br>
@@ -180,6 +183,8 @@ e.target.onclick = test(dataname);
 		</div>
 		
 	</div>
+	<!-- add by CHY(START) -->
+	<!-- 주문 정보 아래줄부터 지우기 -->
 <script>
 function delete_row() {
 var ProductList = document.getElementById("ProductList");
@@ -197,8 +202,7 @@ e.target.onclick = delete_row();
 
 });
 </script>
-
-
+	<!-- add by CHY(END) -->
 
 
 						<br/><br/><br/>
