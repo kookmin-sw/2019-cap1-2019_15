@@ -197,6 +197,9 @@
 		border: 0;
 		position: relative;
 	}
+	.image:hover {
+		background-color: black;
+	}
 
 		.image.fit {
 			display: block;
@@ -489,8 +492,8 @@
 		input[type="reset"].large,
 		input[type="button"].large,
 		.button.large {
-			padding: 1.20em 3em;
-			font-size: 3.0em;
+			padding: 1.20em 2.8em;
+			font-size: 2.5em;
 		}
 
 /* Wrapper */
@@ -517,10 +520,10 @@
 		position: fixed;
 		top: 0;
 		left: 0;
-		width: 100%;
+		width: 130%;
 		background: #0F1116;
 		color: #fff;
-		padding: 1.25em 1.25em 1.25em 1.25em;
+		padding: 5em 5em 5em 5em;
 		z-index: 100;
 	}
 
@@ -571,13 +574,14 @@
 	#banner {
 		text-align: center;
 		color: #fff;
-		padding: 0em 4em;
-		margin-bottom: 6em;
+		padding: 1em 2em;
+		margin-bottom: 2em;
 	}
 
 		#banner p {
-			font-size: 1.75em;
-			line-height: 1.75em;
+			font-size: 5em;
+			line-height: 4em;
+			color : #rgb(9, 9, 9);
 		}
 
 	#banner strong,
@@ -641,6 +645,7 @@
 		text-align: center;
 		border-radius: 0px 0px 6px 6px;
 	}
+
 /* text-align */
 	.centeringContainer {
 		text-align: center; }
