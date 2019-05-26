@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<!--
+	Phase Shift by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+
+<head>
+	<title>Capstone team 15 - Eye can do it</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.dropotron.min.js"></script>
+	<script src="js/skel.min.js"></script>
+	<script src="js/skel-layers.min.js"></script>
+	<script src="js/init.js"></script>
+	<link rel="stylesheet" href="themes/alertify.core.css" />
+	<link rel="stylesheet" href="themes/alertify.default.css" id="toggleCSS" />
+	<meta name="viewport" content="width=device-width">
+
+
+	<!-- Latest compiled and minified CSS
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		jQuery library
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		Latest compiled JavaScript
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+	<noscript>
+		<link rel="stylesheet" href="css/skel.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/style-wide.css" />
+	</noscript>
+
+	<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+
+
+</head>
+
+<body>
+
+	<!-- Wrapper -->
+	<div class="wrapper style1">
+
+
+
+		<div id="banner" class="container">
+			<p id="drink"></p>
+
+			<form name='form'>
+
+				<p sytle="font-size:20px">Size&nbsp;
+					<input id="test" type='button' class="button small" name="size" value='S'>
+					<input type='button' name="size" class="button small" value='M'>
+					<input type='button' class="button small" name="size" value='L'></p>
+				<p>Add shot&nbsp;
+					<input type='button' class="button small" name="shot" value='Y'>
+					<input type='button' class="button small" name="shot" value='N'></p>
+				<p>Amount
+					<input type='button' class="button small" name="▲" value='▲'>
+					<input type='button' class="button small" name="▼" value='▼'>&nbsp;<input id=count style="font-size:35px;" value='1' size='1'></p>
+				<input type='button' name=menu value='Confirm' onclick="confirmChk();">
+			</form>
+			<script>
+				var size, shot, amount;
+				document.querySelector("form").addEventListener("click", (e) => {
+					var name = e.target.getAttribute("name");
+					if (e.target.nodeName == "INPUT") {
+						if (name == "size") {
+							size = e.target.value;
+						} else if (name == "shot") {
+							shot = e.target.value;
+						} else if (name == "▲") {
+							count.value++;
+						} else if (name == "▼" && count.value > 0) {
+							count.value--;
+						}
+					}
+				});
+
+				function confirmChk() {
+					if (size && shot) {
+						amount = count.value;
+					}
+				}
+
+				function senditem() {
+					setTimeout(function() {
+						window.close();
+					}, 2000);
+				}
+			</script>
+		</div>
+	</div>
+	<script src="lib/alertify.min.js"></script>
+	<script>
+		function add_row() {
+			var ProductList = opener.document.getElementById("ProductList");
+			var row = ProductList.insertRow(ProductList.rows.length);
+			var cell1 = row.insertCell(0);
+			var cell2 = row.insertCell(1);
+			var cell3 = row.insertCell(2);
+			var cell4 = row.insertCell(3);
+
+			cell1.innerText = drink.innerText;
+			cell2.innerText = size;
+			cell3.innerText = shot;
+			cell4.innerText = amount;
+
+		}
+	</script>
+
+	<script>
+		function reset() {
+			$("#toggleCSS").attr("href", "themes/alertify.default.css");
+			alertify.set({
+				labels: {
+					ok: "OK",
+					cancel: "Cancel"
+				},
+				delay: 5000,
+				buttonReverse: false,
+				buttonFocus: "ok"
+			});
+		}
+
+
+		$("[name=menu]").on('click', function() {
+			reset();
+
+
+			alertify.confirm("사이즈 : " + size + ", 샷추가 : " + shot + ", 수량 : " + amount + " 입니다.                     장바구니에 담으시겠습니까?	", function(e) {
+				if (e) {
+					alertify.success("추가하였습니다.");
+
+					add_row();
+					setTimeout(function() {
+						window.close();
+					}, 2000);
+
+
+
+				} else {
+					alertify.error("취소하였습니다.");
+
+				}
+			});
+			return false;
+		});
+
+		$(function() {
+			$('button').click(function() {
+				$('button').removeClass()
+				$(this).addClass('on')
+			})
+		})
+	</script>
+
+
+
+
+
+
+
+</body>
+
+</html>
