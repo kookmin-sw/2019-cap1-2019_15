@@ -64,7 +64,6 @@ def extract_eye(image, left, bottom_left, bottom_right, right, upper_right, uppe
 ANCHOR = 0
 
 while(True):
-	print(m.position())
 	ret, image = cap.read()
 
 	gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -144,45 +143,47 @@ while(True):
 		#left_eye = imutils.resize(extract_eye(image, shape[42], shape[47], shape[46], shape[45], shape[44], shape[43]), width=200, height=100)
 
 		rows, cols, _ = right_eye.shape
-		right_eye = right_eye[0:35,0:80] # cut right_eye
+		right_eye = right_eye[0:1000,0:60] # cut right_eye
 
 		gray_right_eye = cv2.cvtColor(right_eye, cv2.COLOR_BGR2GRAY)
-		gray_right_eye = cv2.GaussianBlur(gray_right_eye, (7, 7), 0)
+		gray_right_eye = cv2.GaussianBlur(gray_right_eye, (11, 11), 0)
 		_, threshold = cv2.threshold(gray_right_eye, 20, 255, cv2.THRESH_BINARY_INV)
-		contours, _ = cv2.findContours(threshold, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+		contours, _ = cv2.findContours(threshold, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 		contours = sorted(contours, key=lambda x: cv2.contourArea(x), reverse=True)
 
 		cv2.line(right_eye,(250,300),(250,400),(255,0,0),1)
 		cv2.line(right_eye,(200,350),(300,350),(255,0,0),1)
+		# print(contours)
+		# print("________")
 		for cnt in contours:
 			(x, y, w, h) = cv2.boundingRect(cnt)
 			#cv2.drawContours(right_eye, [cnt], -1, (0, 0, 255), 3)
 			cv2.rectangle(right_eye, (x, y), (x + w, y + h), (255, 0, 0), 2)
 			cv2.line(right_eye, (x + int(w/2), 0), (x + int(w/2), rows), (0, 255, 0), 2)
 			cv2.line(right_eye, (0, y + int(h/2)), (cols, y + int(h/2)), (0, 255, 0), 2)
-			# print((int(x)+int(w/2)))
-			# print((int(y)+int(h/2)))
+			print((int(x)+int(w/2)))
+			print((int(y)+int(h/2)))
 
 			#move mouse 1920 4080
 			xx = list(m.position())
 			xxx = xx[0]
 			yyy = xx[1]
 			if((int(x)+int(w/2)) < 33 ):
-				m.move(3000,yyy)
-			elif((int(x)+int(w/2)) > 37 ):
 				m.move(3700,yyy)
-			else :
+			elif((int(x)+int(w/2)) > 37):
 				m.move(2300,yyy)
+			else :
+				m.move(3000,yyy)
 
 
 		check = 1
 		cv2.imshow("Threshold", threshold)
 		#cv2.imshow("gray right_eye", gray_right_eye)
-		#cv2.imshow("right_eye", right_eye)
+		cv2.imshow("right_eye", right_eye)
 		cv2.imshow("image",image)
 
 	if check == 0:
-		cv2.destroyAllWindows()
+		ANCHOR =0
 
 	key = cv2.waitKey(1)
 	if key == 27:
