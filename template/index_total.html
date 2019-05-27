@@ -32,7 +32,11 @@
 
 	<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 
-
+	<style>
+	#border:hover{
+		border: 5px solid #6b6b6b;;
+	}
+	</style>
 	<!-- add by CHY(START) -->
 	<!-- 팝업창 띄우기 -->
 	<script>
@@ -41,7 +45,7 @@
 
 		function test(name) {
 			myWindow = window.open(
-				"popup.html", '_blank', "toolbar=no,scrollbars=no,resizable=yes,left=300,width=650,height=800"
+				"popup.html", '_blank', "toolbar=no,scrollbars=no,resizable=no,left=300,width=650,height=800"
 			);
 			myWindow.onload = function() {
 				myWindow.drink.innerText = name;
@@ -50,34 +54,34 @@
 
 		var list1 = [{
 				name: "Americano",
-				price: 3500,
+				price: 2500,
 				type: "HC"
 			},
 			{
 				name: "Cappuccino",
-				price: 3700,
+				price: 2800,
 				type: "HC"
 			},
 			{
 				name: "CafeLatte",
-				price: 3600,
+				price: 2700,
 				type: "HC"
 			},
 
 		]
 		var list2 = [{
 				name: "Vanila Latte",
-				price: 5000,
+				price: 3000,
 				type: "HC"
 			},
 			{
 				name: "Caramel",
-				price: 7000,
+				price: 2700,
 				type: "HC"
 			},
 			{
 				name: "Cafe Mocha",
-				price: 3000,
+				price: 2900,
 				type: "HC"
 			},
 		]
@@ -120,8 +124,7 @@
 				}
 				el.setAttribute("class", "4u");
 
-				el.innerHTML += '<a class="image featured"><img src="images/' + mType + ' ' + e.name + '.PNG" data-name="' + mType + ' ' + e.name + '"></a>';
-				el.innerHTML += '<div class="box"><p id="menu" data-name="' + mType + ' ' + e.name + '">' + e.name + '<br>' + e.price + '원</p><a data-name="' + mType + ' ' + e.name + '" class="button mid_large">장바구니</a></div>';
+				el.innerHTML += '<div id="border" data-name="' + mType + ' ' + e.name + '"><a class="image featured"><img src="images/' + mType + ' ' + e.name + '.PNG" data-name="' + mType + ' ' + e.name + '"></a><div class="box" data-name="' + mType + ' ' + e.name + '"><p id="menu" data-name="' + mType + ' ' + e.name + '">' + e.name + '<br>' + e.price + '원</p><a data-name="' + mType + ' ' + e.name + '" class="button mid_large">장바구니</a></div></div>';
 
 				prac1.appendChild(el);
 
@@ -140,8 +143,7 @@
 				}
 				el.setAttribute("class", "4u");
 
-				el.innerHTML += '<a class="image featured"><img src="images/' + mType + ' ' + e.name + '.PNG" data-name="' + mType + ' ' + e.name + '"></a>';
-				el.innerHTML += '<div class="box"><p id="menu" data-name="' + mType + ' ' + e.name + '">' + e.name + '<br>' + e.price + '원</p><a data-name="' + mType + ' ' + e.name + '" class="button mid_large">장바구니</a></div>';
+				el.innerHTML += '<div id="border" data-name="' + mType + ' ' + e.name + '"><a class="image featured"><img src="images/' + mType + ' ' + e.name + '.PNG" data-name="' + mType + ' ' + e.name + '"></a><div class="box" data-name="' + mType + ' ' + e.name + '"><p id="menu" data-name="' + mType + ' ' + e.name + '">' + e.name + '<br>' + e.price + '원</p><a data-name="' + mType + ' ' + e.name + '" class="button mid_large">장바구니</a></div><div>';
 
 				prac2.appendChild(el);
 
@@ -176,10 +178,9 @@
 		<div id="banner" class="container">
 			<section>
 				<p>Choose drink</p>
-				<a onclick="show('ice');" class="button large">Iced</a> <a onclick="show('hot');" class="button large">Hot</a> <a href="index_juice.html" class="button large">beverage</a>
+				<a onclick="show('ice');" class="button xlarge">Iced</a> <a onclick="show('hot');" class="button xlarge">Hot</a>
 			</section>
 		</div>
-
 		<!-- Extra -->
 		<div id="extra">
 			<div id="menu_list" class="container">
@@ -194,7 +195,7 @@
 		<script>
 			menu_list.addEventListener("click", (e) => {
 				var dataname = e.target.getAttribute("data-name");
-				if (e.target.nodeName == "SECTION" || "DIV" || "P" || "A" || "BUTTON") {
+				if (e.target.nodeName == "DIV" || "P" || "A") {
 
 					e.target.onclick = test(dataname);
 				}
@@ -228,8 +229,8 @@
 
 
 				</table>
-				<br/><br /><br/><br/><br/><br/><br/><br/><br/><br/>
-				<button class="button mid_large" id="del">삭제하기</button><br /><br /><br /><br /><br/><br/><br/>
+				<br/><br /><br/><br/><br/><br/><br/><br/>
+				<button class="button mid_large" id="del">삭제하기</button><br /><br /><br/><br/><br/>
 				<a href="complete.html" class="button large">주문하기</a>
 		</div>
 	</div>
@@ -270,7 +271,7 @@
 	<div id="copyright">
 		<div class="container">
 			<div class="copyright">
-				<p>Design: <a href="http://templated.co">MININ HAN</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)</p>
+				<p>Contribute: <a href="http://templated.co">MININ HAN, CHY</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)</p>
 				<ul class="icons">
 					<li><a href="https://github.com/kookmin-sw/2019-cap1-2019_15" class="fa fa-github"><span>Github</span></a></li>
 					<li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
