@@ -34,12 +34,13 @@
 		font-style: italic;
 	}
 
-	p, ul, ol, dl, table, blockquote {
+	ul, ol, dl, table, blockquote {
 		margin: 0 0 2em 0;
 	}
 
 	p {
 		line-height: 2em;
+		margin : 0 0 0 0 ;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -495,6 +496,13 @@
 			padding: 1.20em 2.8em;
 			font-size: 2.5em;
 		}
+		input[type="submit"].large,
+		input[type="reset"].large,
+		input[type="button"].large,
+		.button.xlarge {
+			padding: 1.50em 3.0em;
+			font-size: 3.3em;
+		}
 
 /* Wrapper */
 
@@ -574,7 +582,7 @@
 	#banner {
 		text-align: center;
 		color: #fff;
-		padding: 1em 2em;
+		padding: 1em 2em ;
 		margin-bottom: 2em;
 	}
 
