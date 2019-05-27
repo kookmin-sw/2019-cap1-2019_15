@@ -6,6 +6,7 @@ import imutils
 import dlib
 import cv2
 from pymouse import PyMouse
+import time
 m = PyMouse()
 
 
@@ -29,18 +30,22 @@ def eye_distance(eye):
 	return eye_dist
 
 EYE_AR_THRESH = 0.28
-EYE_AR_CONSEC_FRAMES = 5
+EYE_AR_CONSEC_FRAMES = 8
 COUNTER = 0
 TOTAL = 0
 
-def direction(r_eye_point, anchor_point, w, h, multiple=1):
+def direction(r_eye_point, anchor_point, w, h1, h2, multiple=1):
 	nx, ny = r_eye_point
 	x, y = anchor_point
 
-	if ny > y + multiple * h:
+	if ny > y + multiple * h1:
 		return 'down'
-	elif ny < y - multiple * h:
+	elif ny < y - multiple * h1:
 		return 'up'
+	elif ny > y + multiple * h2:
+		return 'down2'
+	elif ny < y - multiple * h2:
+		return 'up2'
 
 	return '-'
 
@@ -79,9 +84,11 @@ while(True):
 		r_eye = shape[nStart:nEnd]
 		r_eye_point = (r_eye[3, 0], r_eye[3, 1])
 
-		while ANCHOR < 30:
+		while ANCHOR < 10:
 			ANCHOR += 1
 			ANCHOR_POINT = r_eye_point
+			if ANCHOR == 10 :
+				time.sleep(3)
 
 
 
@@ -90,21 +97,26 @@ while(True):
 		x, y = ANCHOR_POINT
 		nx, ny = r_eye_point
 		w= 60
-		h1= 5
+		h1= 10
+		h2 =10
 		h= 10
 		multiple = 1
 		cv2.line(image, ANCHOR_POINT, r_eye_point, (0,0,255), 2)
 
-		dir = direction(r_eye_point, ANCHOR_POINT, w, h)
+		dir = direction(r_eye_point, ANCHOR_POINT, w, h1, h2)
 		#cv2.putText(image, dir.upper(), (10, 90), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255,0,0), 2) 3840
 		drag = 18
 		xx = list(m.position())
 		xxx = xx[0]
 		yyy = xx[1]
 		if dir == 'up':
-			m.move(xxx, 600)
+			m.move(xxx, 1200)
+		# elif dir == 'up2':
+		# 	m.move(xxx,400)
 		elif dir == 'down':
-			m.move(xxx,3200)
+			m.move(xxx,2600)
+		# elif dir == 'down2' :
+		# 	m.move(xxx,3300)
 		else :
 			m.move(xxx,1800)
 
@@ -137,32 +149,35 @@ while(True):
 
 
 
-
 		count = 1
 		right_eye = imutils.resize(extract_eye(image, shape[36], shape[41], shape[46], shape[45], shape[44], shape[37]), width=200, height=100)
 		#left_eye = imutils.resize(extract_eye(image, shape[42], shape[47], shape[46], shape[45], shape[44], shape[43]), width=200, height=100)
 
 		rows, cols, _ = right_eye.shape
-		right_eye = right_eye[0:1000,0:60] # cut right_eye
+		right_eye = right_eye[0:1000,10:60] # cut right_eye
 
 		gray_right_eye = cv2.cvtColor(right_eye, cv2.COLOR_BGR2GRAY)
-		gray_right_eye = cv2.GaussianBlur(gray_right_eye, (11, 11), 0)
-		_, threshold = cv2.threshold(gray_right_eye, 20, 255, cv2.THRESH_BINARY_INV)
+		gray_right_eye = cv2.GaussianBlur(gray_right_eye, (17, 17), 0)
+		_, threshold = cv2.threshold(gray_right_eye, 68, 255, cv2.THRESH_BINARY_INV)
 		contours, _ = cv2.findContours(threshold, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 		contours = sorted(contours, key=lambda x: cv2.contourArea(x), reverse=True)
 
 		cv2.line(right_eye,(250,300),(250,400),(255,0,0),1)
 		cv2.line(right_eye,(200,350),(300,350),(255,0,0),1)
 		# print(contours)
-		# print("________")
-		for cnt in contours:
-			(x, y, w, h) = cv2.boundingRect(cnt)
-			#cv2.drawContours(right_eye, [cnt], -1, (0, 0, 255), 3)
+		print("________")
+		# x = cv2.boundingRect(contours[0])
+		# y = cv2.boundingRect(contours[1])
+		# w = cv2.boundingRect(contours[2])
+		# h = cv2.boundingRect(contours[3])
+		if contours != 0:
+			(x, y, w, h) = cv2.boundingRect(contours[0])
+			cv2.drawContours(right_eye, [contours[0]], -1, (0, 0, 255), 3)
 			cv2.rectangle(right_eye, (x, y), (x + w, y + h), (255, 0, 0), 2)
 			cv2.line(right_eye, (x + int(w/2), 0), (x + int(w/2), rows), (0, 255, 0), 2)
 			cv2.line(right_eye, (0, y + int(h/2)), (cols, y + int(h/2)), (0, 255, 0), 2)
-			print((int(x)+int(w/2)))
-			print((int(y)+int(h/2)))
+			# print((int(x)+int(w/2)))
+			# print((int(y)+int(h/2)))
 
 			#move mouse 1920 4080
 			xx = list(m.position())
@@ -174,6 +189,14 @@ while(True):
 				m.move(2300,yyy)
 			else :
 				m.move(3000,yyy)
+
+
+			# for cnt in contours:
+				# (x, y, w, h) = cv2.boundingRect(cnt)
+				# print(cnt,"dddddddd")
+				# print(x,y,w,h)
+
+
 
 
 		check = 1
