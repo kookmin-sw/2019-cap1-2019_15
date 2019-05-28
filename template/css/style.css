@@ -502,15 +502,15 @@
 		input[type="reset"].xlarge,
 		input[type="button"].xlarge,
 		.button.xlarge {
-			padding: 2.0em 2.0em;
+			padding: 2em 2em;
 			font-size: 3.3em;
 		}
-		input[type="submit"].cart,
-		input[type="reset"].cart,
-		input[type="button"].cart,
-		.button.cart {
-			padding: 1.50em 1.50em;
-			font-size: 2.5em;
+		input[type="submit"].popup,
+		input[type="reset"].popup,
+		input[type="button"].popup,
+		.button.popup {
+			padding: 1em 1em;
+			font-size: 2em;
 		}
 		input[type="submit"],
 		input[type="reset"],

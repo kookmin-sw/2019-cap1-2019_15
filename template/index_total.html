@@ -6,7 +6,7 @@
 -->
 <html>
 
-<head id="checkmain">
+<head>
 	<title>Capstone team 15 - Eye can do it</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="description" content="" />
@@ -18,7 +18,6 @@
 	<script src="js/skel-layers.min.js"></script>
 	<script src="js/init.js"></script>
 	<script src="js/app.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 	<!-- Latest compiled and minified CSS
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		jQuery library
@@ -34,10 +33,9 @@
 	<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 
 	<style>
-		#border:hover {
-			border: 5px solid #6b6b6b;
-			;
-		}
+	#border:hover{
+		border: 5px solid #6b6b6b;;
+	}
 	</style>
 	<!-- add by CHY(START) -->
 	<!-- 팝업창 띄우기 -->
@@ -47,7 +45,7 @@
 
 		function test(name) {
 			myWindow = window.open(
-				"popup.html", '_blank', "toolbar=no,scrollbars=no,resizable=no,left=300,width=800,height=1200"
+				"popup.html", '_blank', "toolbar=no, scrollbars=yes,left=300,width=600,height=800"
 			);
 			myWindow.onload = function() {
 				myWindow.drink.innerText = name;
@@ -126,8 +124,7 @@
 				}
 				el.setAttribute("class", "4u");
 
-				el.innerHTML += '<div id="border" data-name="' + mType + ' ' + e.name + '"><a class="image featured"><img src="images/' + mType + ' ' + e.name + '.PNG" data-name="' + mType + ' ' + e.name + '"></a><div class="box" data-name="' + mType +
-					' ' + e.name + '"><p style="font-size:2.5em;" id="menu" data-name="' + mType + ' ' + e.name + '">' + e.name + '<br>' + e.price + '원</p><a data-name="' + mType + ' ' + e.name + '" class="button mid_large">장바구니</a></div></div>';
+				el.innerHTML += '<div id="border" data-name="' + mType + ' ' + e.name + '"><a class="image featured"><img src="images/' + mType + ' ' + e.name + '.PNG" data-name="' + mType + ' ' + e.name + '"></a><div class="box" data-name="' + mType + ' ' + e.name + '"><p id="menu" data-name="' + mType + ' ' + e.name + '">' + e.name + '<br>' + e.price + '원</p><a data-name="' + mType + ' ' + e.name + '" class="button mid_large">장바구니</a></div></div>';
 
 				prac1.appendChild(el);
 
@@ -146,38 +143,13 @@
 				}
 				el.setAttribute("class", "4u");
 
-				el.innerHTML += '<div id="border" data-name="' + mType + ' ' + e.name + '"><a class="image featured"><img src="images/' + mType + ' ' + e.name + '.PNG" data-name="' + mType + ' ' + e.name + '"></a><div class="box" data-name="' + mType +
-					' ' + e.name + '"><p style="font-size:2.5em;" id="menu" data-name="' + mType + ' ' + e.name + '">' + e.name + '<br>' + e.price + '원</p><a data-name="' + mType + ' ' + e.name + '" class="button mid_large">장바구니</a></div><div>';
+				el.innerHTML += '<div id="border" data-name="' + mType + ' ' + e.name + '"><a class="image featured"><img src="images/' + mType + ' ' + e.name + '.PNG" data-name="' + mType + ' ' + e.name + '"></a><div class="box" data-name="' + mType + ' ' + e.name + '"><p id="menu" data-name="' + mType + ' ' + e.name + '">' + e.name + '<br>' + e.price + '원</p><a data-name="' + mType + ' ' + e.name + '" class="button mid_large">장바구니</a></div><div>';
 
 				prac2.appendChild(el);
 
 
 			});
 		}
-		$(document).ready(function() {
-			// Add smooth scrolling to all links
-			$("a").on('click', function(event) {
-
-				// Make sure this.hash has a value before overriding default behavior
-				if (this.hash !== "") {
-					// Prevent default anchor click behavior
-					event.preventDefault();
-
-					// Store hash
-					var hash = this.hash;
-
-					// Using jQuery's animate() method to add smooth page scroll
-					// The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-					$('html, body').animate({
-						scrollTop: $(hash).offset().top
-					}, 800, function() {
-
-						// Add hash (#) to URL when done scrolling (default click behavior)
-						window.location.hash = hash;
-					});
-				} // End if
-			});
-		});
 	</script>
 	<!-- add by CHY(END) -->
 
@@ -204,10 +176,10 @@
 
 		<!-- Banner -->
 		<div id="banner" class="container">
-			<section>
-				<p style="font-size : 4.3em;">사진을 선택해도 주문이 가능합니다!</p>
-				<a onclick="show('ice');" class="button xlarge">Iced</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a onclick="show('hot');" class="button xlarge">Hot</a>
-				<a class="button large" href="#checkcart">장바구니 확인</a>
+			<section id="top">
+				<p>Choose drink</p>
+				<a onclick="show('ice');" class="button xlarge">Iced</a>&nbsp;<a onclick="show('hot');" class="button xlarge">Hot</a>&nbsp;<a href="#order" class="button xlarge">장바구니 확인</a>
+
 			</section>
 		</div>
 		<!-- Extra -->
@@ -238,7 +210,7 @@
 
 	<!-- Footer -->
 	<div id="footer" class="wrapper style2">
-		<div id="checkcart" class="container">
+		<div class="container" id="order">
 			<section>
 				<header class="major">
 					<h1 style="font-Size:3em">주문내역</h1>
@@ -258,13 +230,14 @@
 
 
 				</table>
-				<br /><br /><br /><br /><br /><br /><br /><br />
-				<button class="button2 large" id="del">삭제하기</button>
-				<button class="button2 large"><a href="#checkmain" style="color:black; text-decoration:none;">  ▲  </a></button>
-				<button class="button2 large"><a href="complete.html" style="color:black; text-decoration:none;">주문완료</a></button>
+				<br/><br /><br/><br/><br/><br/><br/><br/>
+				<a href="#top" class="button mid_large">메뉴선택</a><a class="button mid_large" id="del">삭제하기</a><br /><br /><br/><br/><br/>
+				<a href="complete.html" class="button large">주문하기</a>
 		</div>
 	</div>
 
+
+	</div>
 	<!-- add by CHY(START) -->
 	<!-- 주문 정보 아래줄부터 지우기 -->
 	<script>
@@ -277,7 +250,7 @@
 
 
 		del.addEventListener("click", (e) => {
-			if (e.target.nodeName == "BUTTON") {
+			if (e.target.nodeName == "a") {
 
 				e.target.onclick = delete_row();
 			}
