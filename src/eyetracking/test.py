@@ -87,8 +87,7 @@ while(True):
 		while ANCHOR < 10:
 			ANCHOR += 1
 			ANCHOR_POINT = r_eye_point
-			if ANCHOR == 10 :
-				time.sleep(3)
+
 
 
 
@@ -109,16 +108,16 @@ while(True):
 		xx = list(m.position())
 		xxx = xx[0]
 		yyy = xx[1]
-		if dir == 'up':
-			m.move(xxx, 1200)
-		# elif dir == 'up2':
-		# 	m.move(xxx,400)
-		elif dir == 'down':
-			m.move(xxx,2600)
-		# elif dir == 'down2' :
-		# 	m.move(xxx,3300)
-		else :
-			m.move(xxx,1800)
+		# if dir == 'up':
+		# 	m.move(xxx, 395)
+		# # elif dir == 'up2':
+		# # 	m.move(xxx,400)
+		# elif dir == 'down':
+		# 	m.move(xxx,1580)
+		# # elif dir == 'down2' :
+		# # 	m.move(xxx,3300)
+		# else :
+		# 	m.move(xxx,1065)
 
 
 
@@ -157,41 +156,44 @@ while(True):
 		right_eye = right_eye[0:1000,10:60] # cut right_eye
 
 		gray_right_eye = cv2.cvtColor(right_eye, cv2.COLOR_BGR2GRAY)
-		gray_right_eye = cv2.GaussianBlur(gray_right_eye, (17, 17), 0)
-		_, threshold = cv2.threshold(gray_right_eye, 68, 255, cv2.THRESH_BINARY_INV)
+		gray_right_eye = cv2.GaussianBlur(gray_right_eye, (9, 9), 0)
+		_, threshold = cv2.threshold(gray_right_eye, 45, 255, cv2.THRESH_BINARY_INV)
 		contours, _ = cv2.findContours(threshold, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 		contours = sorted(contours, key=lambda x: cv2.contourArea(x), reverse=True)
 
 		cv2.line(right_eye,(250,300),(250,400),(255,0,0),1)
 		cv2.line(right_eye,(200,350),(300,350),(255,0,0),1)
 		# print(contours)
-		print("________")
+
 		# x = cv2.boundingRect(contours[0])
 		# y = cv2.boundingRect(contours[1])
 		# w = cv2.boundingRect(contours[2])
 		# h = cv2.boundingRect(contours[3])
-		if contours != 0:
-			(x, y, w, h) = cv2.boundingRect(contours[0])
-			cv2.drawContours(right_eye, [contours[0]], -1, (0, 0, 255), 3)
+
+		for cnt in  contours :
+			(x, y, w, h) = cv2.boundingRect(cnt)
+			cv2.drawContours(right_eye, [cnt], -1, (0, 0, 255), 3)
 			cv2.rectangle(right_eye, (x, y), (x + w, y + h), (255, 0, 0), 2)
 			cv2.line(right_eye, (x + int(w/2), 0), (x + int(w/2), rows), (0, 255, 0), 2)
 			cv2.line(right_eye, (0, y + int(h/2)), (cols, y + int(h/2)), (0, 255, 0), 2)
-			# print((int(x)+int(w/2)))
-			# print((int(y)+int(h/2)))
+
+			#print((int(y)+int(h/2)))
 
 			#move mouse 1920 4080
+
 			xx = list(m.position())
 			xxx = xx[0]
 			yyy = xx[1]
-			if((int(x)+int(w/2)) < 33 ):
-				m.move(3700,yyy)
-			elif((int(x)+int(w/2)) > 37):
-				m.move(2300,yyy)
-			else :
-				m.move(3000,yyy)
+			# print(xx)
+			# if((int(x)+int(w/2)) > 18 ):
+			# 	m.move(260,yyy)
+			# elif((int(x)+int(w/2)) < 12):
+			# 	m.move(700,yyy)
+			# else :
+			# 	m.move(540,yyy)
 
-
-			# for cnt in contours:
+			break
+			# for cnt in contour0s:
 				# (x, y, w, h) = cv2.boundingRect(cnt)
 				# print(cnt,"dddddddd")
 				# print(x,y,w,h)
@@ -200,9 +202,9 @@ while(True):
 
 
 		check = 1
-		cv2.imshow("Threshold", threshold)
-		#cv2.imshow("gray right_eye", gray_right_eye)
-		cv2.imshow("right_eye", right_eye)
+		# cv2.imshow("Threshold", threshold)
+		# #cv2.imshow("gray right_eye", gray_right_eye)
+		# cv2.imshow("right_eye", right_eye)
 		cv2.imshow("image",image)
 
 	if check == 0:

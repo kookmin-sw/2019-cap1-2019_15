@@ -493,8 +493,8 @@
 		input[type="reset"].large,
 		input[type="button"].large,
 		.button.large {
-			padding: 1.20em 2.8em;
-			font-size: 2.5em;
+			padding: 0.80em 0.8em;
+			font-size: 1.0em;
 		}
 		input[type="submit"].xlarge,
 		input[type="reset"].xlarge,
