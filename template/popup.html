@@ -46,35 +46,22 @@
 
 
 
-		<div>
-			<p id="drink"></p>
+		<div id="banner" class="container">
+			<p id="drink" style="font-size:30px;"></p>
 
 			<form name='form'>
-				<div class="container" style="position : relative; left: 10%">
-					<p>Size<br/>
-						<input id="test" type='button' class="button xlarge" name="size" value='S'>
-						<input type='button' name="size" class="button xlarge" value='M'>
-						<input type='button' class="button xlarge" name="size" value='L'>
-					</p>
-				</div>
-				<div class="container" style="margin: auto;">
-					<p>Add shot<br/>
-						<input type='button' class="button xlarge" name="shot" value='Y'>
-						<input type='button' class="button xlarge" name="shot" value='N'>
-					</p>
-				</div>
-				<div>
-					<p>Amount<br/>
-						<input type='button' class="button xlarge" name="▲" value='▲'>
-						<input type='button' class="button xlarge" name="▼" value='▼'><br />
-						<input id=count style="font-size:35px;" value='1' size='1'>
-					</p>
-				</div>
-				<div><br />
-					<input style="margin : 0 auto; " type='button' class="button xlarge" name=menu value='Confirm' onclick="confirmChk();">
-				</div>
 
-
+				<p style="font-size:30px">Size&nbsp;
+					<input id="test" type='button' class="button popup" name="size" value='S'>&nbsp;
+					<input type='button' name="size" class="button popup" value='M'>&nbsp;
+					<input type='button' class="button popup" name="size" value='L'></p>
+				<br><p style="font-size:30px">Add shot&nbsp;
+					<input type='button' class="button popup" name="shot" value='Y'>&nbsp;
+					<input type='button' class="button popup" name="shot" value='N'></p>
+				<br><p style="font-size:30px">Amount&nbsp;
+					<input type='button' class="button popup" name="▲" value='▲'>
+					<input type='button' class="button popup" name="▼" value='▼'>&nbsp;<input id=count style="font-size:35px;" value='1' size='1'></p><br>
+				<input type='button' class="button popup"name=menu value='Confirm' onclick="confirmChk();">
 			</form>
 			<script>
 				var size, shot, amount;
