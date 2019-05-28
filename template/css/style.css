@@ -510,7 +510,7 @@
 		input[type="button"].popup,
 		.button.popup {
 			padding: 1em 1em;
-			font-size: 2em;
+			font-size: 1em;
 		}
 		input[type="submit"],
 		input[type="reset"],
@@ -569,6 +569,23 @@
 
 	.wrapper.style2 {
 		padding: 6em 0;
+		background: #6b6b6b;
+		color: white;
+	}
+/* Wrapper2 */
+
+	.wrapper2.style1 {
+		padding-top: 2em;
+		padding-bottom: 2em;
+		background: url(../images/bg.jpg) no-repeat center top;
+		background-size: cover;
+		background-attachment: fixed;
+		-webkit-backface-visibility: hidden;
+		-webkit-transform: translateZ(0);
+	}
+
+	.wrapper2.style2 {
+		padding: 0 0;
 		background: #6b6b6b;
 		color: white;
 	}

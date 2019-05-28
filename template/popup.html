@@ -42,26 +42,26 @@
 <body>
 
 	<!-- Wrapper -->
-	<div class="wrapper style1">
+	<div class="wrapper2 style1">
 
 
 
-		<div id="banner" class="container">
-			<p id="drink" style="font-size:30px;"></p>
+		<div id="banner">
+			<p id="drink" style="font-size:50px;"></p>
 
 			<form name='form'>
 
-				<p style="font-size:30px">Size&nbsp;
-					<input id="test" type='button' class="button popup" name="size" value='S'>&nbsp;
-					<input type='button' name="size" class="button popup" value='M'>&nbsp;
+				<p style="font-size:50px">　　　Size&nbsp;　
+					<input id="test" type='button' class="button popup" name="size" value='S'>
+					<input type='button' name="size" class="button popup" value='M'>
 					<input type='button' class="button popup" name="size" value='L'></p>
-				<br><p style="font-size:30px">Add shot&nbsp;
-					<input type='button' class="button popup" name="shot" value='Y'>&nbsp;
+				<br><p style="font-size:50px">　Add shot&nbsp;　
+					<input type='button' class="button popup" name="shot" value='Y'>　　
 					<input type='button' class="button popup" name="shot" value='N'></p>
-				<br><p style="font-size:30px">Amount&nbsp;
-					<input type='button' class="button popup" name="▲" value='▲'>
-					<input type='button' class="button popup" name="▼" value='▼'>&nbsp;<input id=count style="font-size:35px;" value='1' size='1'></p><br>
-				<input type='button' class="button popup"name=menu value='Confirm' onclick="confirmChk();">
+				<br><p style="font-size:50px">Amount<input id=count style="font-size:35px;" value='1' size='1'>
+					<input type='button' class="button popup" name="+" value='+'>　
+					<input type='button' class="button popup" name="-" value='-'>　<input type='button' style="font-size:28px;padding:2em 1em;" class="button popup"name=menu value='확인' onclick="confirmChk();"></p><br>
+				
 			</form>
 			<script>
 				var size, shot, amount;
@@ -72,9 +72,9 @@
 							size = e.target.value;
 						} else if (name == "shot") {
 							shot = e.target.value;
-						} else if (name == "▲") {
+						} else if (name == "+") {
 							count.value++;
-						} else if (name == "▼" && count.value > 0) {
+						} else if (name == "-" && count.value > 0) {
 							count.value--;
 						}
 					}
@@ -111,8 +111,9 @@
 
 		}
 	</script>
-
+<!--
 	<script>
+
 		function reset() {
 			$("#toggleCSS").attr("href", "themes/alertify.default.css");
 			alertify.set({
@@ -128,6 +129,9 @@
 
 
 		$("[name=menu]").on('click', function() {
+			
+			setTimeout(function(){window.close();}, 1200);
+			
 			reset();
 
 
@@ -154,8 +158,13 @@
 			$('button').click(function() {
 				$('button').removeClass()
 				$(this).addClass('on')
-			})
-		})
+			}) -->
+<script>
+$("[name=menu]").on('click', function() {
+			
+			setTimeout(function(){window.close();}, 1200);		
+
+})
 	</script>
 
 
