@@ -97,7 +97,7 @@
 		text-transform: uppercase;
 	}
 
-		header.major h2 {
+		header.major h1 {
 			margin: 0;
 			padding: 0;
 			line-height: 1em;
@@ -389,6 +389,7 @@
 
 	table {
 		width: 100%;
+		font-size: 1.8em;
 	}
 
 		table.default {
@@ -445,6 +446,7 @@
 		font-weight: 600;
 		color: #FFF !important;
 	}
+
 
 		input[type="submit"]:hover,
 		input[type="reset"]:hover,
@@ -508,6 +510,48 @@
 		input[type="button"].cart,
 		.button.cart {
 			padding: 1.50em 1.50em;
+			font-size: 2.5em;
+		}
+		input[type="submit"],
+		input[type="reset"],
+		input[type="button"],
+		.button2 {
+			-moz-appearance: none;
+			-webkit-appearance: none;
+			-o-appearance: none;
+			-ms-appearance: none;
+			appearance: none;
+			-moz-transition: background-color 0.35s ease-in-out;
+			-webkit-transition: background-color 0.35s ease-in-out;
+			-o-transition: background-color 0.35s ease-in-out;
+			-ms-transition: background-color 0.35s ease-in-out;
+			transition: background-color 0.35s ease-in-out;
+			background: rgb(60, 60, 59);
+			border-radius: 6px;
+			border: 0;
+			color: white;
+			cursor: pointer;
+			display: inline-block;
+			padding: 0.75em 1.5em;
+			text-align: center;
+			text-decoration: none;
+			text-transform: uppercase;
+			display: inline-block;
+			font-size: 1.2em;
+			font-weight: 600;
+			color: #FFF !important;
+		}
+		input[type="submit"]:hover,
+		input[type="reset"]:hover,
+		input[type="button"]:hover,
+		.button2:hover {
+			background: #e1719d;
+		}
+		input[type="submit"].large,
+		input[type="reset"].large,
+		input[type="button"].large,
+		.button2.large {
+			padding: 1.20em 2.8em;
 			font-size: 2.5em;
 		}
 
@@ -612,7 +656,7 @@
 		text-align: center;
 	}
 
-		#footer .major h2,
+		#footer .major h1,
 		#footer .major .byline {
 			color: #FFF !important;
 		}
@@ -632,7 +676,7 @@
 		padding-bottom: 2em;
 	}
 
-		#sidebar .major h2 {
+		#sidebar .major h1 {
 			font-size: 1.8em;
 		}
 
