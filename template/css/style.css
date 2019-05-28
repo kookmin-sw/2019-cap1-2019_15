@@ -496,12 +496,19 @@
 			padding: 1.20em 2.8em;
 			font-size: 2.5em;
 		}
-		input[type="submit"].large,
-		input[type="reset"].large,
-		input[type="button"].large,
+		input[type="submit"].xlarge,
+		input[type="reset"].xlarge,
+		input[type="button"].xlarge,
 		.button.xlarge {
-			padding: 1.50em 3.0em;
+			padding: 2.0em 2.0em;
 			font-size: 3.3em;
+		}
+		input[type="submit"].cart,
+		input[type="reset"].cart,
+		input[type="button"].cart,
+		.button.cart {
+			padding: 1.50em 1.50em;
+			font-size: 2.5em;
 		}
 
 /* Wrapper */
