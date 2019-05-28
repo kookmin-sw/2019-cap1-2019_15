@@ -46,8 +46,10 @@
 		var myWindow;
 
 		function test(name) {
+			var popupX = (window.screen.width / 2) - (1400 / 2);
+			var popupY = (window.screen.height / 2) - (2000 /2);
 			myWindow = window.open(
-				"popup.html", '_blank', "toolbar=no,scrollbars=no,resizable=no,left=300,width=1200,height=1900"
+				"popup.html", '_blank', "toolbar=no, left="+popupX+",top=200, scrollbars=yes, width=1400,height=2000"
 			);
 			myWindow.onload = function() {
 				myWindow.drink.innerText = name;
