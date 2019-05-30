@@ -47,7 +47,7 @@
 
 
 		<div style="font-size:40px;">
-			<p id="drink"></p>
+			<p style="text-align:center;" id="drink"></p>
 
 			<form name='form'>
 
@@ -56,11 +56,11 @@
 					<input type='button' name="size" class="button popup" value='M'>
 					<input type='button' class="button popup" name="size" value='L'></p>
 				<br><p>　Add shot<br>
-					<input type='button' class="button popup" name="shot" value='Y'>　　　　　　　　　　
+					<input type='button' class="button popup" name="shot" value='Y'>　　　　　　　　　
 					<input type='button' class="button popup" name="shot" value='N'></p>
 				<br><p>Amount<input id=count style="font-size:35px;" value='1' size='1'><br>
 					<input type='button' class="button popup" name="+" value='+'>
-					<input type='button' class="button popup" name="-" value='-'>　<input type='button' class="button popup" style="font-size:70px;"name=menu value='확인' onclick="confirmChk();"></p><br>
+					<input type='button' class="button popup" name="-" value='-'>　<input type='button' class="button popup" style="font-size:60px;"name=menu value='확인' onclick="confirmChk();"></p><br>
 				
 			</form>
 			<script>
@@ -161,7 +161,7 @@
 			}) -->
 <script>
 $("[name=menu]").on('click', function() {
-			
+			add_row();
 			setTimeout(function(){window.close();}, 1200);		
 
 })

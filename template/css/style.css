@@ -125,8 +125,8 @@
 /* Form */
 
 	form {
-		width: 100%;
-		margin: 0em;
+		width: 95%;
+		margin: 0em auto;
 	}
 
 	input[type="text"],

@@ -6,7 +6,7 @@
 -->
 <html>
 
-<head id="checkmain">
+<head>
 	<title>Capstone team 15 - Eye can do it</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="description" content="" />
@@ -192,14 +192,14 @@
 
 
 		<!-- Header -->
-		<div id="header" class="skel-panels-fixed">
+		<div id="header" id="check" class="skel-panels-fixed">
 			<div id="logo">
 				<h1 style="font-size : 2.8em"><a href="index_total.html">Eye can do it</a></h1>
 				<span class="tag">by Kookmin Univercity SW</span>
 			</div>
 			<nav id="nav">
 				<ul>
-					<li class="active"><a href="index_total.html">Homepage</a></li>
+					<li class="active"><a href="main.html">Homepage</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -208,8 +208,7 @@
 		<div id="banner" class="container">
 			<section>
 				<p style="font-size : 4.3em;">사진을 선택해도 주문이 가능합니다!</p>
-				<a onclick="show('ice');" class="button xlarge">Iced</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a onclick="show('hot');" class="button xlarge">Hot</a>
-				<a class="button large" href="#checkcart">장바구니 확인</a>
+				<a onclick="show('ice');" class="button xlarge">Iced</a>　<a onclick="show('hot');" class="button xlarge">Hot</a>　<a class="button large" href="#checkcart" style="padding: 2.6em 4em;">장바구니 확인</a>
 			</section>
 		</div>
 		<!-- Extra -->
@@ -262,7 +261,7 @@
 				</table>
 				<br /><br /><br /><br /><br /><br /><br /><br />
 				<button class="button2 large" id="del">삭제하기</button> &nbsp; &nbsp;
-				<button class="button2 large"><a href="#checkmain" style="color:white; text-decoration:none;">  ▲  </a></button>&nbsp; &nbsp;
+				<a class="button2 large" id="check" href="#check"  style="color:white; text-decoration:none;">  ▲  </a>&nbsp; &nbsp;
 				<button class="button2 large"><a href="complete.html" style="color:white; text-decoration:none;">주문완료</a></button>
 		</div>
 	</div>
@@ -282,6 +281,14 @@
 			if (e.target.nodeName == "BUTTON") {
 
 				e.target.onclick = delete_row();
+			}
+
+		});
+		check.addEventListener("click", (e) => {
+			if (e.target.nodeName == "A") {
+				self.location.hash='check';
+
+				
 			}
 
 		});
