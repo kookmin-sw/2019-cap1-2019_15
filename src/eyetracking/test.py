@@ -98,25 +98,22 @@ while(True):
 		nx, ny = r_eye_point
 		w= 60
 		h1= 4
-		h2 =10
-		h= 10
+
 		multiple = 1
 		cv2.line(image, ANCHOR_POINT, r_eye_point, (0,0,255), 2)
 
 		dir = direction(r_eye_point, ANCHOR_POINT, w, h1)
-		#cv2.putText(image, dir.upper(), (10, 90), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255,0,0), 2) 3840
+
 		drag = 18
 		xx = list(m.position())
 		xxx = xx[0]
 		yyy = xx[1]
 		if dir == 'up':
 			m.move(xxx, 445)
-		# elif dir == 'up2':
-		# 	m.move(xxx,400)
+
 		elif dir == 'down':
 			m.move(xxx,1580)
-		# elif dir == 'down2' :
-		# 	m.move(xxx,3300)
+
 		else :
 			m.move(xxx,1065)
 
@@ -148,7 +145,6 @@ while(True):
 
 		count = 1
 		right_eye = imutils.resize(extract_eye(image, shape[36], shape[41], shape[46], shape[45], shape[44], shape[37]), width=200, height=100)
-		#left_eye = imutils.resize(extract_eye(image, shape[42], shape[47], shape[46], shape[45], shape[44], shape[43]), width=200, height=100)
 
 		rows, cols, _ = right_eye.shape
 		right_eye = right_eye[0:1000,0:60] # cut right_eye
@@ -161,12 +157,6 @@ while(True):
 
 		cv2.line(right_eye,(250,300),(250,400),(255,0,0),1)
 		cv2.line(right_eye,(200,350),(300,350),(255,0,0),1)
-		# print(contours)
-
-		# x = cv2.boundingRect(contours[0])
-		# y = cv2.boundingRect(contours[1])
-		# w = cv2.boundingRect(contours[2])
-		# h = cv2.boundingRect(contours[3])
 
 		for cnt in  contours :
 			(x, y, w, h) = cv2.boundingRect(cnt)
@@ -177,8 +167,6 @@ while(True):
 
 			print((int(x)+int(w/2)))
 
-			#move mouse 19 4080
-
 			arr.append((int(x)+int(w/2)))
 			print(len(arr))
 			if len(arr) == 20:
@@ -186,7 +174,7 @@ while(True):
 				xx = list(m.position())
 				xxx = xx[0]
 				yyy = xx[1]
-				#print(xx)
+
 				avg = np.sort(a)
 
 				if(avg[5] > 39 ):
@@ -199,10 +187,6 @@ while(True):
 
 
 			break
-			# for cnt in contour0s:
-				# (x, y, w, h) = cv2.boundingRect(cnt)
-				# print(cnt,"dddddddd")
-				# print(x,y,w,h)
 
 
 
