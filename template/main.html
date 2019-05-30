@@ -181,10 +181,6 @@
 			});
 		});
 
-function move(){
-location.href="complete.html";
-}
-
 	</script>
 	<!-- add by CHY(END) -->
 
@@ -197,9 +193,9 @@ location.href="complete.html";
 
 
 		<!-- Header -->
-		<div id="header" id="check" class="skel-panels-fixed">
+		<div id="header" class="skel-panels-fixed">
 			<div id="logo">
-				<h1 style="font-size : 2.8em"><a href="index_total.html">Eye can do it</a></h1>
+				<h1 id="checkcart2" style="font-size : 2.8em"><a href="main.html">Eye can do it</a></h1>
 				<span class="tag">by Kookmin Univercity SW</span>
 			</div>
 			<nav id="nav">
@@ -223,6 +219,7 @@ location.href="complete.html";
 				</div>
 				<div id="prac2" class="row no-collapse-1">
 				</div>
+				
 			</div>
 		</div>
 		<!-- add by CHY(START) -->
@@ -264,10 +261,10 @@ location.href="complete.html";
 
 
 				</table></section>
-				<br><br><br><br><br><br><br><br>
-				<button class="button2 large" id="del">삭제하기</button> &nbsp; &nbsp;
-				<button class="button2 large"><a href="#check" style="color:white; text-decoration:none;">  ▲  </a></button>&nbsp; &nbsp;
-				<button class="button2 large"><a href="complete.html" style="color:white; text-decoration:none;">주문완료</a></button>
+				<br>
+				<a class="button2 large" id="del">삭제하기</a> &nbsp; &nbsp;
+				<a class="button2 large" href="#checkcart2" style="color:white; text-decoration:none;">▲</a>&nbsp; &nbsp;
+				<a class="button2 large" href="complete.html" style="color:white; text-decoration:none;">주문완료</a>
 		</div>
 	</div>
 
@@ -283,7 +280,7 @@ location.href="complete.html";
 
 
 		del.addEventListener("click", (e) => {
-			if (e.target.nodeName == "BUTTON") {
+			if (e.target.nodeName == "A") {
 
 				e.target.onclick = delete_row();
 			}
@@ -298,10 +295,10 @@ location.href="complete.html";
 	<br /><br /><br />
 	<!-- ---------------------------------------- -->
 
-	</section>
+	
 	</div>
 	</div>
-
+<a href="complete.html" style="color:white; text-decoration:none;">    </a>
 	<!-- Copyright -->
 	<div id="copyright">
 		<div class="container">
