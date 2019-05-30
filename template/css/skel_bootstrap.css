@@ -24,13 +24,7 @@
 		/* width: (containers) */
 		width: 1200px;
 	}
-	.container2 {
-		margin-left: 300px;
-		margin-right: 300px;
 
-		/* width: (containers) */
-		width: 600px;
-	}
 	/* Modifiers */
 
 		.container.small {

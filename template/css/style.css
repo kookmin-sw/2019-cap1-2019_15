@@ -34,12 +34,13 @@
 		font-style: italic;
 	}
 
-	p, ul, ol, dl, table, blockquote {
+	ul, ol, dl, table, blockquote {
 		margin: 0 0 2em 0;
 	}
 
 	p {
 		line-height: 2em;
+		margin : 0 0 0 0 ;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -96,7 +97,7 @@
 		text-transform: uppercase;
 	}
 
-		header.major h2 {
+		header.major h1 {
 			margin: 0;
 			padding: 0;
 			line-height: 1em;
@@ -124,7 +125,7 @@
 /* Form */
 
 	form {
-		width: 70%;
+		width: 95%;
 		margin: 0em auto;
 	}
 
@@ -196,6 +197,9 @@
 	.image {
 		border: 0;
 		position: relative;
+	}
+	.image:hover {
+		background-color: black;
 	}
 
 		.image.fit {
@@ -385,6 +389,7 @@
 
 	table {
 		width: 100%;
+		font-size: 1.8em;
 	}
 
 		table.default {
@@ -442,6 +447,7 @@
 		color: #FFF !important;
 	}
 
+
 		input[type="submit"]:hover,
 		input[type="reset"]:hover,
 		input[type="button"]:hover,
@@ -478,13 +484,83 @@
 			padding: 0.80em 2em;
 			font-size: 1.6em;
 		}
+		input[type="submit"].mid_large,
+		input[type="reset"].mid_large,
+		input[type="button"].mid_large,
+		.button.mid_large {
+			padding: 1.00em 2.5em;
+			font-size: 2.1em;
+		}
+		input[type="submit"].large,
+		input[type="reset"].large,
+		input[type="button"].large,
+		.button.large {
+			padding: 0.80em 0.8em;
+			font-size: 1.0em;
+		}
+		input[type="submit"].xlarge,
+		input[type="reset"].xlarge,
+		input[type="button"].xlarge,
+		.button.xlarge {
+			padding: 2em 2em;
+			font-size: 3.3em;
+		}
+		input[type="submit"].popup,
+		input[type="reset"].popup,
+		input[type="button"].popup,
+		.button.popup {
+			padding: 2.2em 2em;
+			font-size: 2em;
+		}
+		input[type="submit"],
+		input[type="reset"],
+		input[type="button"],
+		.button2 {
+			-moz-appearance: none;
+			-webkit-appearance: none;
+			-o-appearance: none;
+			-ms-appearance: none;
+			appearance: none;
+			-moz-transition: background-color 0.35s ease-in-out;
+			-webkit-transition: background-color 0.35s ease-in-out;
+			-o-transition: background-color 0.35s ease-in-out;
+			-ms-transition: background-color 0.35s ease-in-out;
+			transition: background-color 0.35s ease-in-out;
+			background: rgb(60, 60, 59);
+			border-radius: 6px;
+			border: 0;
+			color: white;
+			cursor: pointer;
+			display: inline-block;
+			padding: 0.75em 1.5em;
+			text-align: center;
+			text-decoration: none;
+			text-transform: uppercase;
+			display: inline-block;
+			font-size: 1.2em;
+			font-weight: 600;
+			color: #FFF !important;
+		}
+		input[type="submit"]:hover,
+		input[type="reset"]:hover,
+		input[type="button"]:hover,
+		.button2:hover {
+			background: #e1719d;
+		}
+		input[type="submit"].large,
+		input[type="reset"].large,
+		input[type="button"].large,
+		.button2.large {
+			padding: 1.20em 2.8em;
+			font-size: 2.5em;
+		}
 
 /* Wrapper */
 
 	.wrapper.style1 {
 		padding-top: 10em;
 		padding-bottom: 2em;
-		background: url(../images/bg.jpg) no-repeat center top;
+		background: rgba(0,0,0,0.01) no-repeat center top;
 		background-size: cover;
 		background-attachment: fixed;
 		-webkit-backface-visibility: hidden;
@@ -496,6 +572,23 @@
 		background: #6b6b6b;
 		color: white;
 	}
+/* Wrapper2 */
+
+	.wrapper2.style1 {
+		padding-top: 0em;
+		padding-bottom: 0em;
+		background: rgba(0,0,0,0.01)	 no-repeat center top;
+		background-size: cover;
+		background-attachment: fixed;
+		-webkit-backface-visibility: hidden;
+		-webkit-transform: translateZ(0);
+	}
+
+	.wrapper2.style2 {
+
+		background: #6b6b6b;
+		color: white;
+	}
 
 /* Header */
 
@@ -503,10 +596,10 @@
 		position: fixed;
 		top: 0;
 		left: 0;
-		width: 100%;
+		width: 130%;
 		background: #0F1116;
 		color: #fff;
-		padding: 1.25em 1.25em 1.25em 1.25em;
+		padding: 5em 5em 5em 5em;
 		z-index: 100;
 	}
 
@@ -557,13 +650,14 @@
 	#banner {
 		text-align: center;
 		color: #fff;
-		padding: 0em 4em;
-		margin-bottom: 6em;
+		padding: 1em 2em ;
+		margin-bottom: 2em;
 	}
 
 		#banner p {
-			font-size: 1.75em;
-			line-height: 1.75em;
+			font-size: 5em;
+			line-height: 4em;
+			color : #rgb(9, 9, 9);
 		}
 
 	#banner strong,
@@ -579,7 +673,7 @@
 		text-align: center;
 	}
 
-		#footer .major h2,
+		#footer .major h1,
 		#footer .major .byline {
 			color: #FFF !important;
 		}
@@ -599,7 +693,7 @@
 		padding-bottom: 2em;
 	}
 
-		#sidebar .major h2 {
+		#sidebar .major h1 {
 			font-size: 1.8em;
 		}
 
@@ -622,11 +716,12 @@
 /* Box */
 
 	.box {
-		padding: 3em 2em;
-		background: #FFF;
+		padding: 3em 1em;
+		background: rgba(0,0,0,0.85);
 		text-align: center;
 		border-radius: 0px 0px 6px 6px;
 	}
+
 /* text-align */
 	.centeringContainer {
 		text-align: center; }
