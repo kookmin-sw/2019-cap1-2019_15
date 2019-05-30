@@ -5,7 +5,6 @@ import argparse
 import imutils
 import dlib
 import cv2
-import time
 from pymouse import PyMouse
 m = PyMouse()
 
@@ -70,11 +69,7 @@ def mouse_hor(shape, ANCHOR, image,nStart,nEnd):
 	r_eye = shape[nStart:nEnd]
 	r_eye_point = (r_eye[4, 0], r_eye[4, 1])
 
-	while ANCHOR < 10:
-	 	ANCHOR += 1
-		ANCHOR_POINT = r_eye_point
-		if ANCHOR == 10 :
-			time.sleep(3)
+	ANCHOR_POINT = r_eye_point
 
 	ANCHOR_HEIGHT = 4
 	cv2.line(image, ANCHOR_POINT, r_eye_point, (0,0,255), 2)
