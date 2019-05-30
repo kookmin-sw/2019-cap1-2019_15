@@ -180,6 +180,11 @@
 				} // End if
 			});
 		});
+
+function move(){
+location.href="complete.html";
+}
+
 	</script>
 	<!-- add by CHY(END) -->
 
@@ -258,10 +263,10 @@
 
 
 
-				</table>
-				<br /><br /><br /><br /><br /><br /><br /><br />
+				</table></section>
+				<br><br><br><br><br><br><br><br>
 				<button class="button2 large" id="del">삭제하기</button> &nbsp; &nbsp;
-				<a class="button2 large" id="check" href="#check"  style="color:white; text-decoration:none;">  ▲  </a>&nbsp; &nbsp;
+				<button class="button2 large"><a href="#check" style="color:white; text-decoration:none;">  ▲  </a></button>&nbsp; &nbsp;
 				<button class="button2 large"><a href="complete.html" style="color:white; text-decoration:none;">주문완료</a></button>
 		</div>
 	</div>
@@ -284,14 +289,7 @@
 			}
 
 		});
-		check.addEventListener("click", (e) => {
-			if (e.target.nodeName == "A") {
-				self.location.hash='check';
 
-				
-			}
-
-		});
 	</script>
 	<!-- add by CHY(END) -->
 
