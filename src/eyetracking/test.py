@@ -34,7 +34,7 @@ EYE_AR_CONSEC_FRAMES = 8
 COUNTER = 0
 TOTAL = 0
 
-def direction(r_eye_point, anchor_point, w, h1, h2, multiple=1):
+def direction(r_eye_point, anchor_point, w, h1, multiple=1):
 	nx, ny = r_eye_point
 	x, y = anchor_point
 
@@ -66,11 +66,12 @@ def extract_eye(image, left, bottom_left, bottom_right, right, upper_right, uppe
 
 	return eye
 
+arr = []
 ANCHOR = 0
 
 while(True):
 	ret, image = cap.read()
-
+	image = image[150:480, 200:500]
 	gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 
@@ -82,7 +83,7 @@ while(True):
 		shape = face_utils.shape_to_np(shape)
 
 		r_eye = shape[nStart:nEnd]
-		r_eye_point = (r_eye[3, 0], r_eye[3, 1])
+		r_eye_point = (r_eye[4, 0], r_eye[4, 1])
 
 		while ANCHOR < 10:
 			ANCHOR += 1
@@ -96,28 +97,28 @@ while(True):
 		x, y = ANCHOR_POINT
 		nx, ny = r_eye_point
 		w= 60
-		h1= 10
+		h1= 4
 		h2 =10
 		h= 10
 		multiple = 1
 		cv2.line(image, ANCHOR_POINT, r_eye_point, (0,0,255), 2)
 
-		dir = direction(r_eye_point, ANCHOR_POINT, w, h1, h2)
+		dir = direction(r_eye_point, ANCHOR_POINT, w, h1)
 		#cv2.putText(image, dir.upper(), (10, 90), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255,0,0), 2) 3840
 		drag = 18
 		xx = list(m.position())
 		xxx = xx[0]
 		yyy = xx[1]
-		# if dir == 'up':
-		# 	m.move(xxx, 395)
-		# # elif dir == 'up2':
-		# # 	m.move(xxx,400)
-		# elif dir == 'down':
-		# 	m.move(xxx,1580)
-		# # elif dir == 'down2' :
-		# # 	m.move(xxx,3300)
-		# else :
-		# 	m.move(xxx,1065)
+		if dir == 'up':
+			m.move(xxx, 445)
+		# elif dir == 'up2':
+		# 	m.move(xxx,400)
+		elif dir == 'down':
+			m.move(xxx,1580)
+		# elif dir == 'down2' :
+		# 	m.move(xxx,3300)
+		else :
+			m.move(xxx,1065)
 
 
 
@@ -140,9 +141,6 @@ while(True):
 				TOTAL += 1
 				m.click(xxx,yyy,1)
 
-				cv2.putText(right_eye, "Click!", (10, 30),
-					cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
-
 
 			COUNTER = 0
 
@@ -153,11 +151,11 @@ while(True):
 		#left_eye = imutils.resize(extract_eye(image, shape[42], shape[47], shape[46], shape[45], shape[44], shape[43]), width=200, height=100)
 
 		rows, cols, _ = right_eye.shape
-		right_eye = right_eye[0:1000,10:60] # cut right_eye
+		right_eye = right_eye[0:1000,0:60] # cut right_eye
 
 		gray_right_eye = cv2.cvtColor(right_eye, cv2.COLOR_BGR2GRAY)
-		gray_right_eye = cv2.GaussianBlur(gray_right_eye, (9, 9), 0)
-		_, threshold = cv2.threshold(gray_right_eye, 45, 255, cv2.THRESH_BINARY_INV)
+		gray_right_eye = cv2.GaussianBlur(gray_right_eye, (25,25), 0)
+		_, threshold = cv2.threshold(gray_right_eye, 30, 255, cv2.THRESH_BINARY_INV)
 		contours, _ = cv2.findContours(threshold, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 		contours = sorted(contours, key=lambda x: cv2.contourArea(x), reverse=True)
 
@@ -177,20 +175,28 @@ while(True):
 			cv2.line(right_eye, (x + int(w/2), 0), (x + int(w/2), rows), (0, 255, 0), 2)
 			cv2.line(right_eye, (0, y + int(h/2)), (cols, y + int(h/2)), (0, 255, 0), 2)
 
-			#print((int(y)+int(h/2)))
+			print((int(x)+int(w/2)))
 
-			#move mouse 1920 4080
+			#move mouse 19 4080
 
-			xx = list(m.position())
-			xxx = xx[0]
-			yyy = xx[1]
-			# print(xx)
-			# if((int(x)+int(w/2)) > 18 ):
-			# 	m.move(260,yyy)
-			# elif((int(x)+int(w/2)) < 12):
-			# 	m.move(700,yyy)
-			# else :
-			# 	m.move(540,yyy)
+			arr.append((int(x)+int(w/2)))
+			print(len(arr))
+			if len(arr) == 20:
+				a= np.array(arr)
+				xx = list(m.position())
+				xxx = xx[0]
+				yyy = xx[1]
+				#print(xx)
+				avg = np.sort(a)
+
+				if(avg[5] > 39 ):
+					m.move(260,yyy)
+				elif(avg[5] <= 35):
+					m.move(790,yyy)
+				else :
+					m.move(540,yyy)
+				arr.clear()
+
 
 			break
 			# for cnt in contour0s:
@@ -202,7 +208,7 @@ while(True):
 
 
 		check = 1
-		# cv2.imshow("Threshold", threshold)
+		cv2.imshow("Threshold", threshold)
 		# #cv2.imshow("gray right_eye", gray_right_eye)
 		# cv2.imshow("right_eye", right_eye)
 		cv2.imshow("image",image)

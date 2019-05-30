@@ -97,7 +97,7 @@
 		text-transform: uppercase;
 	}
 
-		header.major h2 {
+		header.major h1 {
 			margin: 0;
 			padding: 0;
 			line-height: 1em;
@@ -125,7 +125,7 @@
 /* Form */
 
 	form {
-		width: 70%;
+		width: 95%;
 		margin: 0em auto;
 	}
 
@@ -389,6 +389,7 @@
 
 	table {
 		width: 100%;
+		font-size: 1.8em;
 	}
 
 		table.default {
@@ -446,6 +447,7 @@
 		color: #FFF !important;
 	}
 
+
 		input[type="submit"]:hover,
 		input[type="reset"]:hover,
 		input[type="button"]:hover,
@@ -500,14 +502,56 @@
 		input[type="reset"].xlarge,
 		input[type="button"].xlarge,
 		.button.xlarge {
-			padding: 2.0em 2.0em;
+			padding: 2em 2em;
 			font-size: 3.3em;
 		}
-		input[type="submit"].cart,
-		input[type="reset"].cart,
-		input[type="button"].cart,
-		.button.cart {
-			padding: 1.50em 1.50em;
+		input[type="submit"].popup,
+		input[type="reset"].popup,
+		input[type="button"].popup,
+		.button.popup {
+			padding: 2.2em 2em;
+			font-size: 2em;
+		}
+		input[type="submit"],
+		input[type="reset"],
+		input[type="button"],
+		.button2 {
+			-moz-appearance: none;
+			-webkit-appearance: none;
+			-o-appearance: none;
+			-ms-appearance: none;
+			appearance: none;
+			-moz-transition: background-color 0.35s ease-in-out;
+			-webkit-transition: background-color 0.35s ease-in-out;
+			-o-transition: background-color 0.35s ease-in-out;
+			-ms-transition: background-color 0.35s ease-in-out;
+			transition: background-color 0.35s ease-in-out;
+			background: rgb(60, 60, 59);
+			border-radius: 6px;
+			border: 0;
+			color: white;
+			cursor: pointer;
+			display: inline-block;
+			padding: 0.75em 1.5em;
+			text-align: center;
+			text-decoration: none;
+			text-transform: uppercase;
+			display: inline-block;
+			font-size: 1.2em;
+			font-weight: 600;
+			color: #FFF !important;
+		}
+		input[type="submit"]:hover,
+		input[type="reset"]:hover,
+		input[type="button"]:hover,
+		.button2:hover {
+			background: #e1719d;
+		}
+		input[type="submit"].large,
+		input[type="reset"].large,
+		input[type="button"].large,
+		.button2.large {
+			padding: 1.20em 2.8em;
 			font-size: 2.5em;
 		}
 
@@ -525,6 +569,23 @@
 
 	.wrapper.style2 {
 		padding: 6em 0;
+		background: #6b6b6b;
+		color: white;
+	}
+/* Wrapper2 */
+
+	.wrapper2.style1 {
+		padding-top: 0em;
+		padding-bottom: 0em;
+		background: url(../images/bg.jpg) no-repeat center top;
+		background-size: cover;
+		background-attachment: fixed;
+		-webkit-backface-visibility: hidden;
+		-webkit-transform: translateZ(0);
+	}
+
+	.wrapper2.style2 {
+		
 		background: #6b6b6b;
 		color: white;
 	}
@@ -612,7 +673,7 @@
 		text-align: center;
 	}
 
-		#footer .major h2,
+		#footer .major h1,
 		#footer .major .byline {
 			color: #FFF !important;
 		}
@@ -632,7 +693,7 @@
 		padding-bottom: 2em;
 	}
 
-		#sidebar .major h2 {
+		#sidebar .major h1 {
 			font-size: 1.8em;
 		}
 
