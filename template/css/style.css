@@ -495,8 +495,8 @@
 		input[type="reset"].large,
 		input[type="button"].large,
 		.button.large {
-			padding: 1.20em 2.8em;
-			font-size: 2.5em;
+			padding: 0.80em 0.8em;
+			font-size: 1.0em;
 		}
 		input[type="submit"].xlarge,
 		input[type="reset"].xlarge,
@@ -560,7 +560,7 @@
 	.wrapper.style1 {
 		padding-top: 10em;
 		padding-bottom: 2em;
-		background: rgba(0,0,0,0.79) no-repeat center top;
+		background: rgba(0,0,0,0.01) no-repeat center top;
 		background-size: cover;
 		background-attachment: fixed;
 		-webkit-backface-visibility: hidden;
@@ -577,7 +577,7 @@
 	.wrapper2.style1 {
 		padding-top: 0em;
 		padding-bottom: 0em;
-		background: rgba(0,0,0,0.79) no-repeat center top;
+		background: rgba(0,0,0,0.01)	 no-repeat center top;
 		background-size: cover;
 		background-attachment: fixed;
 		-webkit-backface-visibility: hidden;
@@ -585,7 +585,7 @@
 	}
 
 	.wrapper2.style2 {
-		
+
 		background: #6b6b6b;
 		color: white;
 	}
@@ -717,7 +717,7 @@
 
 	.box {
 		padding: 3em 1em;
-		background: #FFF;
+		background: rgba(0,0,0,0.85);
 		text-align: center;
 		border-radius: 0px 0px 6px 6px;
 	}
